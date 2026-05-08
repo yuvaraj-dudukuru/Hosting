@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -File rebrand_index.ps1)",
+      "Bash(powershell -File rebrand_aboutus.ps1)",
+      "Bash(powershell -File rebrand_others.ps1)",
+      "Bash(powershell -File rebrand_css_js.ps1)",
+      "Bash(powershell -Command ' *)",
+      "Bash(powershell -File rebrand_fix.ps1)",
+      "Bash(powershell -Command \"Remove-Item rebrand_*.ps1 -Force; Write-Host 'Cleanup done'\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(grep -n 'header\\\\|Account\\\\|hamburger\\\\|$match\\\\|$inner' d:/fraylon/projects/Hosting/index.html)",
+      "Bash(grep -n '$match\\\\|$inner\\\\|$tail\\\\|hamburgerBtn\\\\|nav-container\\\\|</header>' d:/fraylon/projects/Hosting/about-us.html)",
+      "Bash(grep -n '$match\\\\|$inner\\\\|$hamburger\\\\|mw-header-actions' d:/fraylon/projects/Hosting/cart.html d:/fraylon/projects/Hosting/details.html)",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\fraylon\\\\projects\\\\Hosting\" -Recurse -Force | Where-Object { -not $_.PSIsContainer } | Select-Object FullName)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" status)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" diff src/style.css)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" status --short)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" diff --name-only)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" diff HEAD -- src/style.css)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" show HEAD:src/style.css)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" add src/style.css src/main.js index.html)",
+      "Bash(git -C 'd:\\\\fraylon\\\\projects\\\\Hosting' commit -m ' *)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" push origin main)"
+    ]
+  }
+}
