@@ -24,7 +24,12 @@
       "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" add src/style.css src/main.js index.html)",
       "Bash(git -C 'd:\\\\fraylon\\\\projects\\\\Hosting' commit -m ' *)",
       "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" push origin main)",
-      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" add index.html)"
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" add index.html)",
+      "PowerShell(Get-ChildItem \"d:\\\\fraylon\\\\projects\\\\Hosting\\\\src\\\\assets\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Sort-Object Name | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem \"d:\\\\fraylon\\\\projects\\\\Hosting\" -Filter \"logo.png\" | Select-Object Name, @{N='MB';E={[math]::Round\\($_.Length/1MB,2\\)}})",
+      "PowerShell(Get-ChildItem \"d:\\\\fraylon\\\\projects\\\\Hosting\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,0\\)}} | Where-Object {$_.Name -match '\\\\.\\(png|jpg|svg|avif\\)$'} | Format-Table -AutoSize)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" add src/style.css index.html)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" diff --cached --stat)"
     ]
   }
 }
