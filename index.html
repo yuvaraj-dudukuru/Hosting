@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India's Best Web Hosting Company | 80% OFF Web Hosting Services</title>
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="preload" href="./src/assets/dashboard.avif" as="image">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -25,10 +28,10 @@
             <div class="mw-logo-wrapper">
                 <div class="mw-logo">
                     <a href="index.html">
-                        <img src="logo.png" alt="Fraylon Logo">
+                        <img src="logo.png" alt="Fraylon Logo" width="120" height="32">
                     </a>
                 </div>
-                <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India Flag" class="india-flag">
+                <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India Flag" class="india-flag">
             </div>
             <nav class="mw-nav">
                 <ul class="mw-nav-ul">
@@ -238,7 +241,7 @@
                     </div>
                 </div>
                 <div class="mw-hero-visual">
-                    <img src="./src/assets/dashboard.avif" alt="Fraylon Hosting Dashboard">
+                    <img src="./src/assets/dashboard.avif" alt="Fraylon Hosting Dashboard" fetchpriority="high" loading="eager">
                 </div>
             </div>
         </section>
@@ -682,13 +685,13 @@
             <div class="container">
                 <div class="guarantee-card">
                     <div class="guarantee-badge">
-                        <img src="./src/assets/monyback-guarantee.svg" alt="30 Day Money Back Guarantee">
+                        <img loading="lazy" src="./src/assets/monyback-guarantee.svg" alt="30 Day Money Back Guarantee">
                     </div>
                     <div class="guarantee-content">
                         <h2>30-Day Money Back</h2>
                         <p>Experience Fraylon Hosting with confidence. If we don’t meet your expectations, simply <a href="#">request a refund</a> — we’ll process it promptly with <span class="text-blue">no questions asked</span>.</p>
                         <div class="founder-signature">
-                            <img src="./src/assets/experience.svg" alt="Fraylon Signature" class="signature-img" style="filter:invert(1);opacity:0.6">
+                            <img loading="lazy" src="./src/assets/experience.svg" alt="Fraylon Signature" class="signature-img" style="filter:invert(1);opacity:0.6">
                             <div class="founder-info">
                                 <div>
                                     <strong>Team Fraylon</strong>
@@ -709,7 +712,7 @@
                         <div class="testimonial-card">
                             <div class="testimonial-inner">
                                 <div class="testimonial-image">
-                                    <img src="https://ui-avatars.com/api/?name=A+K&background=dbeafe&color=1d4ed8&size=100&bold=true" alt="Early Customer">
+                                    <img loading="lazy" src="https://ui-avatars.com/api/?name=A+K&background=dbeafe&color=1d4ed8&size=100&bold=true" alt="Early Customer">
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
@@ -725,7 +728,7 @@
                         <div class="testimonial-card">
                             <div class="testimonial-inner">
                                 <div class="testimonial-image">
-                                    <img src="https://ui-avatars.com/api/?name=R+S&background=dcfce7&color=166534&size=100&bold=true" alt="Early Customer">
+                                    <img loading="lazy" src="https://ui-avatars.com/api/?name=R+S&background=dcfce7&color=166534&size=100&bold=true" alt="Early Customer">
                                 </div>
                                 <div class="testimonial-content">
                                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
@@ -756,21 +759,21 @@
                 <div class="support-grid">
                         <div class="support-info">
                             <div class="support-item">
-                                <img src="./src/assets/live-support.svg" alt="24/7 Support" class="support-svg">
+                                <img loading="lazy" src="./src/assets/live-support.svg" alt="24/7 Support" class="support-svg">
                                 <div class="support-text">
                                     <h3>24/7 support in English & Hindi</h3>
                                     <p>Live chat, email, and ticket assistance</p>
                                 </div>
                             </div>
                             <div class="support-item">
-                                <img src="./src/assets/chat.svg" alt="Prompt Responses" class="support-svg">
+                                <img loading="lazy" src="./src/assets/chat.svg" alt="Prompt Responses" class="support-svg">
                                 <div class="support-text">
                                     <h3>Prompt and friendly responses</h3>
                                     <p>Average chat response time: under 30 seconds</p>
                                 </div>
                             </div>
                             <div class="support-item">
-                                <img src="./src/assets/team.svg" alt="Support Team" class="support-svg">
+                                <img loading="lazy" src="./src/assets/team.svg" alt="Support Team" class="support-svg">
                                 <div class="support-text">
                                     <h3>What our support team helps you with</h3>
                                     <ul class="support-list">
@@ -785,7 +788,7 @@
                         
                         <div class="support-visual">
                             <div class="visual-content">
-                                <img src="./src/assets/stress-free.png" alt="Fraylon Support Chat" class="chat-full-img">
+                                <img loading="lazy" src="./src/assets/stress-free.png" alt="Fraylon Support Chat" class="chat-full-img">
                                 <div class="happiness-score-mini">
                                     <span class="score-percent">96%</span>
                                     <span class="score-text">Happiness Score</span>
@@ -964,10 +967,10 @@
                                     </div>
                                 </th>
                                 <th class="col-other">
-                                    <img src="./src/assets/hostinger.svg" alt="Hostinger" class="table-logo-small">
+                                    <img loading="lazy" src="./src/assets/hostinger.svg" alt="Hostinger" class="table-logo-small">
                                 </th>
                                 <th class="col-other">
-                                    <img src="./src/assets/godaddy.svg" alt="GoDaddy" class="table-logo-small">
+                                    <img loading="lazy" src="./src/assets/godaddy.svg" alt="GoDaddy" class="table-logo-small">
                                 </th>
                             </tr>
                         </thead>
@@ -1089,42 +1092,42 @@
                 <div class="trust-features-grid">
                     <div class="trust-feature-card">
                         <div class="feature-icon-wrapper blue-bg">
-                            <img src="./src/assets/servers.svg" alt="Servers" class="feature-svg">
+                            <img loading="lazy" src="./src/assets/servers.svg" alt="Servers" class="feature-svg">
                         </div>
                         <h3>Fast Indian servers</h3>
                         <p>Instant loading with NVMe SSD for zero latency, higher engagement, and better SEO.</p>
                     </div>
                     <div class="trust-feature-card">
                         <div class="feature-icon-wrapper orange-bg">
-                            <img src="./src/assets/human-support.svg" alt="Support" class="feature-svg">
+                            <img loading="lazy" src="./src/assets/human-support.svg" alt="Support" class="feature-svg">
                         </div>
                         <h3>24&times;7 expert human support</h3>
                         <p>Get instant help from our trained experts—no bots, automated systems, or delayed tickets.</p>
                     </div>
                     <div class="trust-feature-card">
                         <div class="feature-icon-wrapper green-bg">
-                            <img src="./src/assets/migration.svg" alt="Migration" class="feature-svg">
+                            <img loading="lazy" src="./src/assets/migration.svg" alt="Migration" class="feature-svg">
                         </div>
                         <h3>Free website migration</h3>
                         <p>Switching from another host? We migrate your site free with zero downtime or interruptions.</p>
                     </div>
                     <div class="trust-feature-card">
                         <div class="feature-icon-wrapper purple-bg">
-                            <img src="./src/assets/tag.svg" alt="Pricing" class="feature-svg">
+                            <img loading="lazy" src="./src/assets/tag.svg" alt="Pricing" class="feature-svg">
                         </div>
                         <h3>Transparent, fair pricing</h3>
                         <p>No hidden renewals. With transparent pricing, what you see is exactly what you pay long term.</p>
                     </div>
                     <div class="trust-feature-card">
                         <div class="feature-icon-wrapper cyan-bg">
-                            <img src="./src/assets/optimized.svg" alt="SMB" class="feature-svg">
+                            <img loading="lazy" src="./src/assets/optimized.svg" alt="SMB" class="feature-svg">
                         </div>
                         <h3>Optimized for SMB websites</h3>
                         <p>Get optimized Indian SMB hosting plans. Run WordPress, eCommerce, or other sites.</p>
                     </div>
                     <div class="trust-feature-card">
                         <div class="feature-icon-wrapper yellow-bg">
-                            <img src="./src/assets/backups.svg" alt="Backups" class="feature-svg">
+                            <img loading="lazy" src="./src/assets/backups.svg" alt="Backups" class="feature-svg">
                         </div>
                         <h3>Daily backups</h3>
                         <p>We include automated, daily backups for your site. Just a click and get data restored anytime.</p>
@@ -1179,7 +1182,7 @@
                     
                     <div class="migration-visual">
                         <div class="migration-image-wrapper">
-                            <img src="./src/assets/migration.avif" alt="Site Migration Support" class="migration-img">
+                            <img loading="lazy" src="./src/assets/migration.avif" alt="Site Migration Support" class="migration-img">
                         </div>
                     </div>
                 </div>
@@ -1215,7 +1218,7 @@
                             </div>
                             
                             <div class="card-right">
-                                <img src="./src/assets/optimized-cloud.avif" alt="Optimized Cloud Hosting" class="card-full-img">
+                                <img loading="lazy" src="./src/assets/optimized-cloud.avif" alt="Optimized Cloud Hosting" class="card-full-img">
                             </div>
                         </div>
                     </div>
@@ -1224,7 +1227,7 @@
                     <div class="stack-card card-email card-alt">
                         <div class="card-content">
                             <div class="card-right">
-                                <img src="./src/assets/professional-emails.avif" alt="Professional Business Email" class="card-full-img">
+                                <img loading="lazy" src="./src/assets/professional-emails.avif" alt="Professional Business Email" class="card-full-img">
                             </div>
 
                             <div class="card-center">
@@ -1265,7 +1268,7 @@
                             </div>
                             
                             <div class="card-right">
-                                <img src="./src/assets/ai-website-builder.avif" alt="AI Website Builder" class="card-full-img">
+                                <img loading="lazy" src="./src/assets/ai-website-builder.avif" alt="AI Website Builder" class="card-full-img">
                             </div>
                         </div>
                     </div>
@@ -1274,7 +1277,7 @@
                     <div class="stack-card card-ai-domain card-alt">
                         <div class="card-content">
                             <div class="card-right">
-                                <img src="./src/assets/ai-domain-generator.avif" alt="AI Domain Generator" class="card-full-img">
+                                <img loading="lazy" src="./src/assets/ai-domain-generator.avif" alt="AI Domain Generator" class="card-full-img">
                             </div>
 
                             <div class="card-center">
@@ -1305,7 +1308,7 @@
                         <div class="trust-text-wrapper">
                             <h2 class="trust-brand-text">Fraylon</h2>
                             <div class="arrow-indicator">
-                                <img src="./src/assets/online-success.svg" alt="Pointer" class="wave-pointer">
+                                <img loading="lazy" src="./src/assets/online-success.svg" alt="Pointer" class="wave-pointer">
                             </div>
                         </div>
                     </div>
@@ -1352,9 +1355,9 @@
                         <div class="stat-item">
                             <div class="stat-icon-wrapper">
                                 <div class="stat-avatars">
-                                    <div class="avatar"><img src="https://ui-avatars.com/api/?name=A&background=dbeafe&color=1d4ed8&size=100" alt="User"></div>
-                                    <div class="avatar"><img src="https://ui-avatars.com/api/?name=R&background=dcfce7&color=166534&size=100" alt="User"></div>
-                                    <div class="avatar"><img src="https://ui-avatars.com/api/?name=S&background=fef3c7&color=92400e&size=100" alt="User"></div>
+                                    <div class="avatar"><img loading="lazy" src="https://ui-avatars.com/api/?name=A&background=dbeafe&color=1d4ed8&size=100" alt="User"></div>
+                                    <div class="avatar"><img loading="lazy" src="https://ui-avatars.com/api/?name=R&background=dcfce7&color=166534&size=100" alt="User"></div>
+                                    <div class="avatar"><img loading="lazy" src="https://ui-avatars.com/api/?name=S&background=fef3c7&color=92400e&size=100" alt="User"></div>
                                 </div>
                             </div>
                             <div class="stat-text">
@@ -1415,7 +1418,7 @@
                             <h3>Ideal for High-Growth Business Owners</h3>
                             <p>With the help of SSD NVMe storage, LiteSpeed servers, and an intuitive control panel, I maximize my online business presence with Fraylon's high-performance hosting plans.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=FK&background=dbeafe&color=1d4ed8&size=100&bold=true" alt="Firos K">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=FK&background=dbeafe&color=1d4ed8&size=100&bold=true" alt="Firos K">
                                 <div class="reviewer-info">
                                     <span>Firos K</span>
                                     <div class="stars-box">
@@ -1434,7 +1437,7 @@
                             <h3>Absolutely Love Fraylon</h3>
                             <p>Their tech support expertise is just unbelievable. I highly recommend Fraylon to anyone looking for the most dependable hosting provider around. Thanks, I'm truly a fan now!</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=SS&background=f0fdf4&color=166534&size=100&bold=true" alt="Sbio S">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=SS&background=f0fdf4&color=166534&size=100&bold=true" alt="Sbio S">
                                 <div class="reviewer-info">
                                     <span>Sbio S</span>
                                     <div class="stars-box">
@@ -1453,7 +1456,7 @@
                             <h3>Excellent support quality</h3>
                             <p>I had an outstanding experience with the support team at Fraylon Hosting! They not only resolved my issue swiftly but did so with the utmost professionalism and a friendly attitude.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=JJ&background=fef3c7&color=92400e&size=100&bold=true" alt="Jaison J">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=JJ&background=fef3c7&color=92400e&size=100&bold=true" alt="Jaison J">
                                 <div class="reviewer-info">
                                     <span>Jaison J</span>
                                     <div class="stars-box">
@@ -1472,7 +1475,7 @@
                             <h3>Exceptional hosting service</h3>
                             <p>Fraylon constantly delivers on their promises of uptime and excellent service. Their team handled everything with ease, and I couldn't be more impressed with the service.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=VB&background=ede9fe&color=5b21b6&size=100&bold=true" alt="Vineet B">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=VB&background=ede9fe&color=5b21b6&size=100&bold=true" alt="Vineet B">
                                 <div class="reviewer-info">
                                     <span>Vineet B</span>
                                     <div class="stars-box">
@@ -1491,7 +1494,7 @@
                             <h3>Website running smoothly</h3>
                             <p>Their high-quality servers, reliable customer support, and ample bandwidth consistently keep my website running smoothly without any issues.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=RK&background=fee2e2&color=991b1b&size=100&bold=true" alt="Ravinder K">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=RK&background=fee2e2&color=991b1b&size=100&bold=true" alt="Ravinder K">
                                 <div class="reviewer-info">
                                     <span>Ravinder K</span>
                                     <div class="stars-box">
@@ -1513,7 +1516,7 @@
                             <h3>Delightful experience with Fraylon</h3>
                             <p>Fraylon's support is exceptional. In multiple instances, they efficiently resolved issues during chat sessions, earning high praise from Australia.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=PG&background=dbeafe&color=1d4ed8&size=100&bold=true" alt="Paul Gibson">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=PG&background=dbeafe&color=1d4ed8&size=100&bold=true" alt="Paul Gibson">
                                 <div class="reviewer-info">
                                     <span>Paul Gibson</span>
                                     <div class="stars-box">
@@ -1532,7 +1535,7 @@
                             <h3>Support team is superb</h3>
                             <p>It was a super support team experience. Their technical support is compellingly supportive 24/7. They help with everything with ease.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=MM&background=dcfce7&color=166534&size=100&bold=true" alt="Mohammed Moizuddin">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=MM&background=dcfce7&color=166534&size=100&bold=true" alt="Mohammed Moizuddin">
                                 <div class="reviewer-info">
                                     <span>Mohammed Moizuddin</span>
                                     <div class="stars-box">
@@ -1551,7 +1554,7 @@
                             <h3>Highly recommended</h3>
                             <p>Best hosting company for WordPress. The speeds are amazing and the support is always there to help. I've moved all my client sites here.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=AS&background=fef3c7&color=92400e&size=100&bold=true" alt="Amit Singh">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=AS&background=fef3c7&color=92400e&size=100&bold=true" alt="Amit Singh">
                                 <div class="reviewer-info">
                                     <span>Amit Singh</span>
                                     <div class="stars-box">
@@ -1570,7 +1573,7 @@
                             <h3>Fast and Reliable</h3>
                             <p>Switched from another big host and the difference is night and day. Faster loading times and better security features out of the box.</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=SJ&background=ede9fe&color=5b21b6&size=100&bold=true" alt="Sarah J">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=SJ&background=ede9fe&color=5b21b6&size=100&bold=true" alt="Sarah J">
                                 <div class="reviewer-info">
                                     <span>Sarah J</span>
                                     <div class="stars-box">
@@ -1589,7 +1592,7 @@
                             <h3>Top notch service</h3>
                             <p>The migrations were seamless. The team handled everything and my sites were up and running on Fraylon within hours. Great job!</p>
                             <div class="reviewer">
-                                <img src="https://ui-avatars.com/api/?name=BM&background=fee2e2&color=991b1b&size=100&bold=true" alt="Bhupendra M">
+                                <img loading="lazy" src="https://ui-avatars.com/api/?name=BM&background=fee2e2&color=991b1b&size=100&bold=true" alt="Bhupendra M">
                                 <div class="reviewer-info">
                                     <span>Bhupendra M</span>
                                     <div class="stars-box">
@@ -1814,12 +1817,12 @@
                 </div>
                 <div class="payment-row">
                     <div class="payment-icons">
-                        <img src="./src/assets/visa_icon.svg" alt="Visa">
-                        <img src="./src/assets/mastercard_icon.svg" alt="Mastercard">
-                        <img src="./src/assets/rupay_icon.svg" alt="Rupay">
-                        <img src="./src/assets/upi_icon.svg" alt="UPI">
-                        <img src="./src/assets/gpay_icon.svg" alt="GPay">
-                        <img src="./src/assets/phone-pe.svg" alt="PhonePe">
+                        <img loading="lazy" src="./src/assets/visa_icon.svg" alt="Visa">
+                        <img loading="lazy" src="./src/assets/mastercard_icon.svg" alt="Mastercard">
+                        <img loading="lazy" src="./src/assets/rupay_icon.svg" alt="Rupay">
+                        <img loading="lazy" src="./src/assets/upi_icon.svg" alt="UPI">
+                        <img loading="lazy" src="./src/assets/gpay_icon.svg" alt="GPay">
+                        <img loading="lazy" src="./src/assets/phone-pe.svg" alt="PhonePe">
                     </div>
                     <a href="#" class="more-payments">And more payment options</a>
                 </div>
@@ -1871,6 +1874,7 @@
 </script>
 </body>
 </html>
+
 
 
 

@@ -279,14 +279,7 @@ ul {
   text-decoration: none;
 }
 
-.btn-mw-primary {
-  background-color: var(--mw-blue);
-  color: var(--mw-white);
-}
-
-.btn-mw-primary:hover {
-  background-color: var(--mw-blue-dark);
-}
+/* .btn-mw-primary defined below in Hero section */
 
 .btn-outline-account {
   border: 1px solid var(--mw-border);
