@@ -23,7 +23,8 @@
       "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" show HEAD:src/style.css)",
       "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" add src/style.css src/main.js index.html)",
       "Bash(git -C 'd:\\\\fraylon\\\\projects\\\\Hosting' commit -m ' *)",
-      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" push origin main)"
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" push origin main)",
+      "Bash(git -C \"d:\\\\fraylon\\\\projects\\\\Hosting\" add index.html)"
     ]
   }
 }
