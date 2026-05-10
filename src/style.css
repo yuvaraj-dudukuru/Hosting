@@ -93,6 +93,8 @@ ul {
 
 .mw-logo img {
   height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 
 .india-flag {
