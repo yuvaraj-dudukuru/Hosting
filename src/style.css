@@ -192,14 +192,39 @@ ul {
 }
 
 .mega-item {
-  display: block;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background 0.18s;
 }
 
 .mega-item:hover {
-  background: #f8fafc;
+  background: #f0f7ff;
+}
+
+.mega-item-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #146ef5;
+  font-size: 14px;
+  transition: background 0.18s, color 0.18s;
+}
+
+.mega-item:hover .mega-item-icon-wrap {
+  background: #dbeafe;
+  color: #0f4fc8;
+}
+
+.mega-item-body {
+  flex: 1;
 }
 
 .mega-item-header {
@@ -213,6 +238,7 @@ ul {
   font-size: 14px;
   font-weight: 700;
   color: #111827;
+  transition: color 0.18s;
 }
 
 .mega-item-badge {
