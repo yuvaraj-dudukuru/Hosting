@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.mw-pricing-card, .guarantee-card, .testimonial-card, ' +
         '.why-feature-item, .why-grid-item, .faq-item, ' +
         '.support-card, .feature-card, .parallax-card, ' +
-        '.mw-pricing-header, .mw-hero-text, .mw-hero-visual'
+        '.mw-hero-text, .mw-hero-visual'
     );
     const delayClasses = ['', 'mw-reveal-d1', 'mw-reveal-d2', 'mw-reveal-d3'];
     revealTargets.forEach((el, i) => {

@@ -532,8 +532,6 @@ ul {
 }
 
 .mw-pricing-header {
-  position: relative;
-  z-index: 10;
   margin-bottom: 50px;
 }
 
