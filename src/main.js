@@ -1,14 +1,22 @@
 ﻿// Main JS for Fraylon Hosting
 
-// FAQ Accordion Toggle
-function toggleFaq(btn) {
+// FAQ Accordion Toggle — exposed on window so inline onclick handlers can call it
+// (this script is loaded as type="module", which scopes top-level functions away from window)
+window.toggleFaq = function (btn) {
     const item = btn.parentElement;
     const isOpen = item.classList.contains('open');
-    // Close all open items
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    // If it wasn't open, open it
     if (!isOpen) item.classList.add('open');
-}
+};
+
+// Audience carousel scroll (used by web-hosting.html prev/next buttons)
+window.scrollAudience = function (direction) {
+    const grid = document.getElementById('audienceGrid');
+    if (!grid) return;
+    const card = grid.querySelector('.audience-card');
+    const step = card ? card.getBoundingClientRect().width + 24 : 320;
+    grid.scrollBy({ left: direction * step, behavior: 'smooth' });
+};
 
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -74,8 +74,8 @@
                                 <div class="form-group">
                                     <label>Password<span>*</span></label>
                                     <div class="password-input-wrapper">
-                                        <input type="password" placeholder="Create a password">
-                                        <button class="show-password">Show</button>
+                                        <input type="password" id="signupPassword" placeholder="Create a password">
+                                        <button id="passwordToggleBtn" type="button" class="show-password">Show</button>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +185,7 @@
                             <div class="savings-text">Your total savings: ₹25,837.28</div>
                         </div>
 
-                        <button class="btn-checkout">Continue to Payment</button>
+                        <button class="btn-checkout" onclick="alert('Payment integration coming soon — your order has been saved.'); return false;">Continue to Payment</button>
                         
                         <div class="guarantee-line">
                             <i class="far fa-check-circle"></i>
@@ -229,7 +229,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Placeholder for interactions if needed
+            // Password show/hide toggle
+            var pwBtn = document.getElementById('passwordToggleBtn');
+            var pwInput = document.getElementById('signupPassword');
+            if (pwBtn && pwInput) {
+                pwBtn.addEventListener('click', function() {
+                    var hidden = pwInput.type === 'password';
+                    pwInput.type = hidden ? 'text' : 'password';
+                    pwBtn.textContent = hidden ? 'Hide' : 'Show';
+                });
+            }
         });
     </script>
 <div class="mw-mobile-overlay" id="mobileOverlay"></div>
@@ -248,7 +257,7 @@
         <li><a href="#">Support</a></li>
         <li><a href="about-us.html">About Us</a></li>
     </ul>
-    <a href="#" class="btn btn-mw-primary mw-mobile-cta">My Account</a>
+    <a href="index.html" class="btn btn-mw-primary mw-mobile-cta">My Account</a>
 </nav>
 <script>
 (function(){
