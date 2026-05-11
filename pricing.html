@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#146EF5">
-    <title>About Fraylon Hosting — Indian Web Host from Hyderabad</title>
-    <meta name="description" content="Fraylon Hosting was incorporated in December 2025 and is headquartered in Hyderabad, Telangana. Indian-built web hosting with honest pricing and human support.">
+    <title>Pricing & Plans — Same Price at Renewal | Fraylon Hosting</title>
+    <meta name="description" content="Transparent hosting pricing from ₹69/mo. Pick a plan, pick a duration — that price is locked at renewal. Compare Fraylon vs others on the same page.">
     
     <link rel="icon" type="image/svg+xml" href="./public/favicon.svg">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Fraylon Hosting">
-    <meta property="og:title" content="About Fraylon Hosting — Indian Web Host from Hyderabad">
-    <meta property="og:description" content="Fraylon Hosting was incorporated in December 2025 and is headquartered in Hyderabad, Telangana. Indian-built web hosting with honest pricing and human support.">
+    <meta property="og:title" content="Pricing & Plans — Same Price at Renewal | Fraylon Hosting">
+    <meta property="og:description" content="Transparent hosting pricing from ₹69/mo. Pick a plan, pick a duration — that price is locked at renewal. Compare Fraylon vs others on the same page.">
     <meta property="og:image" content="./src/assets/dashboard.avif">
 
     <link rel="stylesheet" href="./src/style.css">
@@ -70,9 +70,9 @@
                         </div>
                     </li>
                     <li><a href="wordpress.html">WordPress</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="pricing.html" class="is-active">Pricing</a></li>
                     <li><a href="index.html#contact">Support</a></li>
-                    <li><a href="about-us.html" class="is-active">About Us</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
                 </ul>
             </nav>
             <div class="mw-header-actions">
@@ -85,96 +85,82 @@
     </header>
     <main>
 
-        <section class="page-hero page-hero-about" aria-labelledby="aboutHero">
+        <section class="page-hero page-hero-pricing" aria-labelledby="pricingHero">
             <div class="page-hero-glow" aria-hidden="true"></div>
             <div class="container page-hero-container">
-                <span class="page-eyebrow"><span class="eyebrow-pulse" aria-hidden="true"></span> About Fraylon</span>
-                <h1 id="aboutHero">Built in Hyderabad. <span class="text-blue">Built for India.</span></h1>
-                <p class="page-hero-lede">Fraylon Hosting is an Indian web hosting company — incorporated in December 2025 and headquartered in Hyderabad, Telangana. We host the websites of Indian founders, agencies and creators on infrastructure that finally lives close to home.</p>
-                <div class="page-hero-actions">
-                    <a href="pricing.html" class="btn btn-mw-primary">See our plans</a>
-                    <a href="index.html#contact" class="btn btn-mw-secondary">Talk to us</a>
-                </div>
+                <span class="page-eyebrow"><span class="eyebrow-pulse" aria-hidden="true"></span> Transparent pricing</span>
+                <h1 id="pricingHero">Same price at renewal. Always.</h1>
+                <p class="page-hero-lede">Pick a plan, pick a duration, and that's what you pay — this year, next year, the year after. No "promotional" pricing tricks.</p>
             </div>
         </section>
 
-        <section class="about-facts" aria-label="Company facts">
+        <section class="mw-pricing" id="plans-section" aria-labelledby="plansHeading">
             <div class="container">
-                <div class="about-facts-grid">
-                    <div class="fact-card"><span class="fact-kicker">Founded</span><strong>December 2025</strong><span>Incorporated in Telangana</span></div>
-                    <div class="fact-card"><span class="fact-kicker">HQ</span><strong>Hyderabad, India</strong><span>Banjara Hills · IST timezone</span></div>
-                    <div class="fact-card"><span class="fact-kicker">Mission</span><strong>Honest hosting</strong><span>No renewal tricks. No upsell traps.</span></div>
-                    <div class="fact-card"><span class="fact-kicker">Servers</span><strong>India + Singapore</strong><span>Low latency for SAARC traffic</span></div>
+                <div class="mw-pricing-header">
+                    <h2 id="plansHeading" class="sr-only">Hosting plans</h2>
+                    <ul class="mw-trust-banner">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Choose monthly or long-term</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 24/7 expert support</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 99.9% uptime guarantee</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Free migration included</li>
+                    </ul>
+
+                    <div class="mw-duration-wrapper">
+                        <label for="durationDropdown" id="durationLabel">Plan Duration</label>
+                        <div class="mw-custom-dropdown" id="durationDropdown" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="durationLabel" aria-controls="durationOptions">
+                            <div class="dropdown-selected">
+                                <span class="selected-text">48 months</span>
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="dropdown-options" id="durationOptions" role="listbox" aria-label="Plan duration">
+                                <div class="option" data-value="12" role="option" tabindex="-1" aria-selected="false">12 months</div>
+                                <div class="option" data-value="24" role="option" tabindex="-1" aria-selected="false">24 months</div>
+                                <div class="option" data-value="36" role="option" tabindex="-1" aria-selected="false">36 months</div>
+                                <div class="option selected" data-value="48" role="option" tabindex="-1" aria-selected="true"><span>48 months</span><span class="best-value">BEST VALUE</span></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="mw-pricing-grid" id="plansGrid" aria-live="polite" aria-busy="false"></div>
+                <p class="mw-gst-notice"><i class="fas fa-info-circle" aria-hidden="true"></i> All plan prices exclude 18% GST (added at checkout). Same price at renewal — guaranteed.</p>
             </div>
         </section>
 
-        <section class="about-story" aria-labelledby="storyHeading">
-            <div class="container about-story-grid">
-                <div class="about-story-text">
-                    <span class="page-eyebrow">Our story</span>
-                    <h2 id="storyHeading">Why we started Fraylon</h2>
-                    <p>We spent a decade running websites in India and watching the same script play out on every host: a beautiful intro price, a renewal hike, a support queue that didn't speak our timezone, and a control panel that felt designed for a different country.</p>
-                    <p>Fraylon was built to fix all of that — local servers, local language support, prices that don't change at renewal, and a control panel that respects how Indian businesses actually run their sites.</p>
-                    <p>If we sound a little stubborn about transparency, it's because we've been on the other side of the invoice.</p>
-                </div>
-                <aside class="about-story-aside">
-                    <h3>What we'll never do</h3>
-                    <ul>
-                        <li><i class="fas fa-xmark" aria-hidden="true"></i> Raise your renewal price</li>
-                        <li><i class="fas fa-xmark" aria-hidden="true"></i> Hide GST until checkout</li>
-                        <li><i class="fas fa-xmark" aria-hidden="true"></i> Outsource support to a bot</li>
-                        <li><i class="fas fa-xmark" aria-hidden="true"></i> Push you into a year you don't need</li>
-                    </ul>
-                    <h3>What we always will</h3>
-                    <ul>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Honour the price you signed up with</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Reply in under 30 seconds on chat</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Migrate your old site for free</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Refund within 30 days, no questions</li>
-                    </ul>
-                </aside>
-            </div>
-        </section>
-
-        <section class="about-pillars" aria-labelledby="pillarsHeading">
+        <section class="mw-comparison-section" aria-labelledby="cmpHeading">
             <div class="container">
-                <h2 id="pillarsHeading">What we care about</h2>
-                <div class="pillars-grid">
-                    <article class="pillar-card">
-                        <div class="pillar-icon pillar-blue"><i class="fas fa-bolt" aria-hidden="true"></i></div>
-                        <h3>Performance over marketing</h3>
-                        <p>NVMe storage, LiteSpeed servers, HTTP/3 and AI-tuned caching by default. The fast version of your site is the version we ship.</p>
-                    </article>
-                    <article class="pillar-card">
-                        <div class="pillar-icon pillar-amber"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
-                        <h3>Security by default</h3>
-                        <p>Free SSL, WAF, malware cleanup and daily off-site backups on every plan — even the cheapest. Security is not a paid add-on.</p>
-                    </article>
-                    <article class="pillar-card">
-                        <div class="pillar-icon pillar-green"><i class="fas fa-headset" aria-hidden="true"></i></div>
-                        <h3>Support that's actually local</h3>
-                        <p>Real Fraylon engineers, based in Hyderabad, on IST. English and Hindi, on chat or ticket, 24/7. No outsourcing.</p>
-                    </article>
+                <div class="comparison-header">
+                    <h2 id="cmpHeading">Fraylon vs others: who gives you more?</h2>
+                    <p>How our standard Web Hosting compares to leading providers (lower is better for price, higher is better for everything else).</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="about-hq" aria-labelledby="hqHeading">
-            <div class="container about-hq-grid">
-                <div>
-                    <span class="page-eyebrow">HQ &amp; legal</span>
-                    <h2 id="hqHeading">Headquartered in Hyderabad</h2>
-                    <p>Fraylon Hosting Pvt. Ltd. was incorporated in December 2025 in Telangana, India. We operate from Hyderabad with a distributed support team across India and a primary data presence in Mumbai and Singapore.</p>
-                    <dl class="hq-meta">
-                        <div><dt>Registered office</dt><dd>Banjara Hills, Hyderabad, Telangana — 500034</dd></div>
-                        <div><dt>Incorporation</dt><dd>December 2025</dd></div>
-                        <div><dt>Working hours</dt><dd>Support 24/7 · Sales 9am – 9pm IST</dd></div>
-                        <div><dt>Reach us</dt><dd><a href="mailto:support@fraylon.com">support@fraylon.com</a></dd></div>
-                    </dl>
-                </div>
-                <div class="about-hq-card">
-                    <img src="./src/assets/team_office1.png" alt="The Fraylon Hosting team at the Hyderabad office" loading="lazy">
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th class="row-label"></th>
+                                <th class="col-fraylon highlighted"><img src="logo.png" alt="Fraylon" class="table-logo"></th>
+                                <th class="col-other"><img loading="lazy" src="./src/assets/hostinger.svg" alt="Hostinger" class="table-logo-small"></th>
+                                <th class="col-other"><img loading="lazy" src="./src/assets/godaddy.svg" alt="GoDaddy" class="table-logo-small"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="row-label">Company origin: India</td><td class="col-fraylon highlighted"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td></tr>
+                            <tr class="section-row"><td class="row-label">Price</td><td class="col-fraylon highlighted"></td><td class="col-other"></td><td class="col-other"></td></tr>
+                            <tr><td class="row-label">Offer price</td><td class="col-fraylon highlighted"><span class="price-big">₹99/mo</span></td><td class="col-other">₹149.00/mo</td><td class="col-other">₹219.00/mo</td></tr>
+                            <tr><td class="row-label">Renewal price</td><td class="col-fraylon highlighted"><span class="price-renewal">₹99.00/mo</span><span class="renewal-note">(Same price at renewal)</span></td><td class="col-other">₹449.00/mo <span class="price-increase">(300% increase)</span></td><td class="col-other">₹599.00/mo <span class="price-increase">(270% increase)</span></td></tr>
+                            <tr class="section-row"><td class="row-label">Features</td><td class="col-fraylon highlighted"></td><td class="col-other"></td><td class="col-other"></td></tr>
+                            <tr><td class="row-label">NVMe servers</td><td class="col-fraylon highlighted"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td><td class="col-other"><i class="fas fa-check text-green"></i></td></tr>
+                            <tr><td class="row-label">Website hosting limit</td><td class="col-fraylon highlighted"><span class="val-bold">25</span></td><td class="col-other">3</td><td class="col-other">1</td></tr>
+                            <tr><td class="row-label">Advanced WordPress optimization</td><td class="col-fraylon highlighted"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td></tr>
+                            <tr><td class="row-label">Email accounts</td><td class="col-fraylon highlighted"><span class="val-bold">Free</span></td><td class="col-other">Paid</td><td class="col-other">Free</td></tr>
+                            <tr><td class="row-label">SSH access</td><td class="col-fraylon highlighted"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td></tr>
+                            <tr><td class="row-label">Daily backups</td><td class="col-fraylon highlighted"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td></tr>
+                            <tr><td class="row-label">Full website migration</td><td class="col-fraylon highlighted"><i class="fas fa-check text-green"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td><td class="col-other"><i class="fas fa-times text-grey"></i></td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td></td><td class="col-fraylon highlighted footer-row"><a href="cart.html" class="btn btn-mw-primary btn-sm">Get Started</a></td><td></td><td></td></tr>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
         </section>
@@ -183,10 +169,10 @@
             <div class="cta-banner-container">
                 <div class="cta-banner-card">
                     <div class="cta-banner-content">
-                        <p class="cta-banner-label">Hosting from people you can reach</p>
-                        <h2 class="cta-banner-headline">Ready to put your site on<br>an Indian host?</h2>
-                        <a href="pricing.html" class="cta-banner-btn" data-fraylon-action="about-cta-plans">See the plans</a>
-                        <p class="cta-banner-guarantee">30-day money-back &bull; Free migration &bull; Same price at renewal</p>
+                        <p class="cta-banner-label">Best Value Without Renewal Surprises</p>
+                        <h2 class="cta-banner-headline">Save up to 80% today — pay<br>the same at renewal.</h2>
+                        <a href="#plans-section" class="cta-banner-btn" data-fraylon-action="cta-claim">Claim Offer Now</a>
+                        <p class="cta-banner-guarantee">30-day money-back guarantee &bull; No hidden charges</p>
                     </div>
                 </div>
             </div>

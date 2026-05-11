@@ -3,42 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India's Best Web Hosting Company | 80% OFF Web Hosting Services</title>
+    <meta name="theme-color" content="#146EF5">
+    <title>Fraylon Hosting — India's Web Hosting · 80% OFF + Free Domain</title>
+    <meta name="description" content="Fraylon Hosting is an India-based web hosting company. Get fast NVMe servers, free SSL, free domain, daily backups, 24/7 expert support and 80% off — same price at renewal, guaranteed.">
+    <meta name="keywords" content="web hosting India, cheap hosting, WordPress hosting, NVMe hosting, Indian web host, Fraylon Hosting, business email, SSL, domain registration">
+    <meta name="author" content="Fraylon Hosting">
+    <link rel="canonical" href="https://fraylon.com/">
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Fraylon Hosting">
+    <meta property="og:title" content="Fraylon Hosting — India's Web Hosting · 80% OFF + Free Domain">
+    <meta property="og:description" content="Fast Indian web hosting from ₹69/mo. Free SSL, free domain, daily backups, 24/7 support. Same price at renewal, guaranteed.">
+    <meta property="og:image" content="./src/assets/dashboard.avif">
+    <meta property="og:url" content="https://fraylon.com/">
+    <meta property="og:locale" content="en_IN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fraylon Hosting — India's Web Hosting · 80% OFF">
+    <meta name="twitter:description" content="Fast Indian web hosting from ₹69/mo. Free SSL, free domain, daily backups, 24/7 support.">
+    <meta name="twitter:image" content="./src/assets/dashboard.avif">
+
     <link rel="stylesheet" href="./src/style.css">
-    <link rel="preload" href="./src/assets/dashboard.avif" as="image">
+    <link rel="preload" href="./src/assets/dashboard.avif" as="image" fetchpriority="high">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Fraylon Hosting",
+        "url": "https://fraylon.com/",
+        "logo": "https://fraylon.com/logo.png",
+        "description": "Indian web hosting company offering fast, secure, and affordable hosting.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+        "sameAs": ["https://twitter.com/fraylon", "https://www.linkedin.com/company/fraylon"]
+    }
+    </script>
 </head>
 <body>
-    <div class="mw-top-bar">
+    <div class="mw-top-bar" id="topOfferBar" role="region" aria-label="Limited-time offer">
         <div class="container">
             <div class="top-bar-content">
-                <p>Limited-time savings — ends in <span id="timer">12H 44M 45S</span></p>
-                <a href="#plans-section" class="view-plans">View Plans</a>
+                <p>Limited-time savings — ends in <span id="timer" aria-live="polite" aria-atomic="true">--H --M --S</span></p>
+                <a href="#plans-section" class="view-plans" data-scroll>View Plans</a>
             </div>
         </div>
     </div>
 
-    <header class="mw-header">
+    <header class="mw-header" id="siteHeader">
         <div class="container mw-nav-container">
             <div class="mw-logo-wrapper">
                 <div class="mw-logo">
-                    <a href="index.html">
-                        <img src="logo.png" alt="Fraylon Logo">
+                    <a href="index.html" aria-label="Fraylon Hosting — home">
+                        <img src="logo.png" alt="Fraylon Hosting">
                     </a>
                 </div>
             </div>
-            <nav class="mw-nav">
+            <nav class="mw-nav" aria-label="Primary">
                 <ul class="mw-nav-ul">
                     <li class="has-submenu">
-                        <a href="#">Hosting <i class="fas fa-chevron-down"></i></a>
+                        <a href="hosting.html">Hosting <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <div class="mw-mega-menu">
                             <a href="web-hosting.html" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-server"></i></div>
+                                <div class="mega-item-icon-wrap"><i class="fas fa-server" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Web Hosting</span>
@@ -47,8 +80,8 @@
                                     <p class="mega-item-desc">For new and business websites</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-cloud"></i></div>
+                            <a href="hosting.html#cloud" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-cloud" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Cloud Hosting</span>
@@ -57,8 +90,8 @@
                                     <p class="mega-item-desc">For growing and scalable websites</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-code"></i></div>
+                            <a href="hosting.html#nodejs" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-code" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Node.js Hosting</span>
@@ -69,10 +102,10 @@
                         </div>
                     </li>
                     <li class="has-submenu">
-                        <a href="#">WordPress <i class="fas fa-chevron-down"></i></a>
+                        <a href="wordpress.html">WordPress <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <div class="mw-mega-menu">
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fab fa-wordpress"></i></div>
+                            <a href="wordpress.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fab fa-wordpress" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">WordPress Hosting</span>
@@ -81,8 +114,8 @@
                                     <p class="mega-item-desc">Get your website online today</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+                            <a href="wordpress.html#managed" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Managed WordPress</span>
@@ -94,10 +127,10 @@
                         </div>
                     </li>
                     <li class="has-submenu">
-                        <a href="#">VPS & Dedicated <i class="fas fa-chevron-down"></i></a>
+                        <a href="coming-soon.html">VPS &amp; Dedicated <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <div class="mw-mega-menu">
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-server"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-server" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">VPS Hosting</span>
@@ -106,8 +139,8 @@
                                     <p class="mega-item-desc">For more power and control</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-sliders"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-sliders" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Managed VPS Hosting</span>
@@ -116,8 +149,8 @@
                                     <p class="mega-item-desc">We manage your VPS for you</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fab fa-windows"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fab fa-windows" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Windows VPS</span>
@@ -126,8 +159,8 @@
                                     <p class="mega-item-desc">Ideal for ASP.NET and Windows apps</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-database"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-database" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Dedicated Server</span>
@@ -138,10 +171,10 @@
                         </div>
                     </li>
                     <li class="has-submenu">
-                        <a href="#">Domain & Email <i class="fas fa-chevron-down"></i></a>
+                        <a href="coming-soon.html">Domain &amp; Email <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <div class="mw-mega-menu">
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-globe"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-globe" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Domain</span>
@@ -149,8 +182,8 @@
                                     <p class="mega-item-desc">Register your domain name</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-envelope"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-envelope" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Business Email</span>
@@ -159,8 +192,8 @@
                                     <p class="mega-item-desc">Professional email for startups</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-lock"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-lock" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">SSL Certificate</span>
@@ -170,12 +203,12 @@
                             </a>
                         </div>
                     </li>
-                    <li><a href="#">Pricing</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
                     <li class="has-submenu">
-                        <a href="#">Support <i class="fas fa-chevron-down"></i></a>
+                        <a href="#contact" data-nav-section="contact" data-scroll>Support <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <div class="mw-mega-menu">
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-book-open"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-book-open" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Knowledge Base</span>
@@ -183,8 +216,8 @@
                                     <p class="mega-item-desc">Find instant answers and solutions</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-circle-play"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-circle-play" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Tutorials</span>
@@ -192,8 +225,8 @@
                                     <p class="mega-item-desc">Easy how-to videos</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-headset"></i></div>
+                            <a href="#contact" class="mega-item" data-scroll>
+                                <div class="mega-item-icon-wrap"><i class="fas fa-headset" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Contact Us</span>
@@ -204,10 +237,10 @@
                         </div>
                     </li>
                     <li class="has-submenu">
-                        <a href="about-us.html">About Us <i class="fas fa-chevron-down"></i></a>
+                        <a href="about-us.html">About Us <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <div class="mw-mega-menu">
                             <a href="about-us.html" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-building"></i></div>
+                                <div class="mega-item-icon-wrap"><i class="fas fa-building" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">About Fraylon</span>
@@ -215,8 +248,8 @@
                                     <p class="mega-item-desc">Trusted Indian host since 2025</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-users"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-users" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Customer Success Stories</span>
@@ -224,8 +257,8 @@
                                     <p class="mega-item-desc">Real results from our clients</p>
                                 </div>
                             </a>
-                            <a href="#" class="mega-item">
-                                <div class="mega-item-icon-wrap"><i class="fas fa-newspaper"></i></div>
+                            <a href="coming-soon.html" class="mega-item">
+                                <div class="mega-item-icon-wrap"><i class="fas fa-newspaper" aria-hidden="true"></i></div>
                                 <div class="mega-item-body">
                                     <div class="mega-item-header">
                                         <span class="mega-item-title">Blog</span>
@@ -238,8 +271,8 @@
                 </ul>
             </nav>
             <div class="mw-header-actions">
-                <a href="mailto:support@fraylon.com?subject=Account%20Login%20Request" class="btn btn-outline-account">My Account</a>
-                <button class="mw-hamburger" id="hamburgerBtn" aria-label="Open menu">
+                <button type="button" class="btn btn-outline-account" data-open-modal="accountModal" data-fraylon-action="open-account">My Account</button>
+                <button class="mw-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -250,71 +283,72 @@
     
 
     <main>
-        <section class="mw-hero">
+        <section class="mw-hero" id="home">
             <div class="mw-hero-glow" aria-hidden="true"></div>
             <div class="container mw-hero-container">
                 <div class="mw-hero-text">
                     <span class="mw-hero-eyebrow">
-                        <span class="eyebrow-pulse"></span>
+                        <span class="eyebrow-pulse" aria-hidden="true"></span>
                         Indian-built hosting · Launched 2025
                     </span>
                     <span class="mw-hero-offer">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
                         Get <span class="text-blue">80% Off</span> Hosting + <span class="dotted">Free Domain</span>
                     </span>
                     <h1>Launch your website in minutes</h1>
-                    <p class="hero-subheading">Fast, secure & reliable hosting built for Indian websites.</p>
+                    <p class="hero-subheading">Fast, secure &amp; reliable hosting built for Indian websites.</p>
                     <ul class="mw-hero-bullets">
-                        <li><i class="fas fa-check"></i> Up to <span class="dotted">20x faster</span> website performance</li>
-                        <li><i class="fas fa-check"></i> Free SSL, <span class="dotted">email & daily backups</span></li>
-                        <li><i class="fas fa-check"></i> Build your website <span class="dotted">instantly with AI</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Up to <span class="dotted">20x faster</span> website performance</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Free SSL, <span class="dotted">email &amp; daily backups</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Build your website <span class="dotted">instantly with AI</span></li>
                     </ul>
-                    <div class="mw-hero-price">
-                        <span class="price-symbol">₹</span>
-                        <span class="price-value">69</span>
+                    <div class="mw-hero-price" id="heroPrice">
+                        <span class="price-symbol" aria-hidden="true">₹</span>
+                        <span class="price-value" id="heroPriceValue">69</span>
                         <span class="price-mo">/mo</span>
                     </div>
                     <p class="mw-hero-renewal">Same price at renewal — Guaranteed</p>
+                    <p class="mw-hero-tax-note">+ 18% GST at checkout · billed <span id="heroDurationLabel">48 months</span> upfront (<span id="heroTotalLabel">₹3,312</span>)</p>
                     <div class="mw-hero-actions">
-                        <a href="#plans-section" class="btn btn-mw-primary">Start Now <i class="fas fa-arrow-right"></i></a>
-                        <a href="#plans-section" class="btn btn-mw-secondary">View Plans</a>
+                        <a href="#plans-section" class="btn btn-mw-primary" data-scroll data-fraylon-action="hero-start">Start Now <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="#plans-section" class="btn btn-mw-secondary" data-scroll data-fraylon-action="hero-view-plans">View Plans</a>
                     </div>
                     <div class="mw-hero-trust">
-                        <div class="trust-item"><i class="fas fa-shield-halved"></i><span>30-day money-back</span></div>
-                        <div class="trust-item"><i class="fas fa-bolt"></i><span>Cancel anytime</span></div>
-                        <div class="trust-item"><i class="fas fa-headset"></i><span>24/7 support</span></div>
+                        <div class="trust-item"><i class="fas fa-shield-halved" aria-hidden="true"></i><span>30-day money-back</span></div>
+                        <div class="trust-item"><i class="fas fa-bolt" aria-hidden="true"></i><span>Cancel anytime</span></div>
+                        <div class="trust-item"><i class="fas fa-headset" aria-hidden="true"></i><span>24/7 support</span></div>
                     </div>
                 </div>
                 <div class="mw-hero-visual">
                     <div class="mw-hero-visual-glow" aria-hidden="true"></div>
-                    <img src="./src/assets/dashboard.avif" alt="Fraylon Hosting Dashboard" fetchpriority="high" loading="eager">
+                    <img src="./src/assets/dashboard.avif" alt="Screenshot of the Fraylon Hosting customer dashboard showing site management, email, and backups" fetchpriority="high" loading="eager">
                 </div>
             </div>
         </section>
 
-        <section class="mw-pricing" id="plans-section">
+        <section class="mw-pricing" id="plans-section" aria-labelledby="plansHeading">
             <div class="container">
                 <div class="mw-pricing-header">
-                    <h2>Same price at renewal. Guaranteed.</h2>
+                    <h2 id="plansHeading">Same price at renewal. Guaranteed.</h2>
                     <ul class="mw-trust-banner">
-                        <li><i class="fas fa-check"></i> Choose monthly or long-term</li>
-                        <li><i class="fas fa-check"></i> 24/7 expert support</li>
-                        <li><i class="fas fa-check"></i> 99.9% uptime guarantee</li>
-                        <li><i class="fas fa-check"></i> Free migration included</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Choose monthly or long-term</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 24/7 expert support</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 99.9% uptime guarantee</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Free migration included</li>
                     </ul>
 
                     <div class="mw-duration-wrapper">
-                        <label>Plan Duration</label>
-                        <div class="mw-custom-dropdown" id="durationDropdown">
+                        <label for="durationDropdown" id="durationLabel">Plan Duration</label>
+                        <div class="mw-custom-dropdown" id="durationDropdown" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="durationLabel" aria-controls="durationOptions">
                             <div class="dropdown-selected">
                                 <span class="selected-text">48 months</span>
-                                <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
                             </div>
-                            <div class="dropdown-options">
-                                <div class="option" data-value="12">12 months</div>
-                                <div class="option" data-value="24">24 months</div>
-                                <div class="option" data-value="36">36 months</div>
-                                <div class="option selected" data-value="48">
+                            <div class="dropdown-options" id="durationOptions" role="listbox" aria-label="Plan duration">
+                                <div class="option" data-value="12" role="option" tabindex="-1" aria-selected="false">12 months</div>
+                                <div class="option" data-value="24" role="option" tabindex="-1" aria-selected="false">24 months</div>
+                                <div class="option" data-value="36" role="option" tabindex="-1" aria-selected="false">36 months</div>
+                                <div class="option selected" data-value="48" role="option" tabindex="-1" aria-selected="true">
                                     <span>48 months</span>
                                     <span class="best-value">BEST VALUE</span>
                                 </div>
@@ -323,407 +357,8 @@
                     </div>
                 </div>
 
-                <div class="mw-pricing-grid">
-                    <!-- Starter -->
-                    <div class="mw-pricing-card">
-                        <div class="card-header">
-                            <h3>Starter</h3>
-                            <p>Great for first-time users.</p>
-                            <div class="discount-row">
-                                <span class="badge-orange">83% OFF</span>
-                                <span class="old-price">₹399</span>
-                            </div>
-                            <div class="price">₹<span class="price-value">69</span><span class="price-mo">/mo</span></div>
-                            <p class="pay-today">For 48 months, you pay ₹3,312 today – no price increase.</p>
-                        </div>
-                        <a href="cart.html" class="btn btn-outline-blue">Choose Plan</a>
-                        <div class="renewal-guarantee">Same Price at Renewal – Guaranteed</div>
-                        <ul class="card-features">
-                            <li>1 website</li>
-                            <li>Free AI website builder</li>
-                            <li>Free AI credits</li>
-                            <li>10 GB NVMe storage</li>
-                            <li class="disabled">Free domain for 1 year</li>
-                            <li>1 email account <span>FREE</span></li>
-                            <li>WordPress ready</li>
-                            <li>Free SSL for your website</li>
-                            <li class="disabled">Node.js web apps</li>
-                        </ul>
-                        <div class="mw-extra-features">
-                            <ul class="card-features">
-                                <li>Free email marketer tool</li>
-                                <li>AI WP speed boost <span class="badge-new">NEW</span></li>
-                                <li>LiteSpeed Server + CDN</li>
-                                <li>Free website migration</li>
-                                <li>India server location</li>
-                                <li>Daily backups</li>
-                                <li>Instant malware cleanup</li>
-                                <li>24/7 priority expert support</li>
-                            </ul>
-                            <div class="card-accordions">
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Managed WordPress</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>1-Click WP install</li>
-                                        <li>WP-CLI + SSH</li>
-                                        <li>Auto-Updates + Security scanner</li>
-                                        <li class="disabled">Object caching</li>
-                                        <li class="disabled">WordPress multisite</li>
-                                        <li>WooCommerce ready</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Developer Tools</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li class="disabled">Node.js, Python, Django</li>
-                                        <li>Laravel, CodeIgniter, PHP</li>
-                                        <li>SSH + GIT access</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Technical Specs</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>3,00,000 files & directories (inodes)</li>
-                                        <li>20 PHP workers</li>
-                                        <li>~10,000 visits monthly</li>
-                                        <li>2 subdomains</li>
-                                        <li>25 MySQL max user connections</li>
-                                        <li>2 databases</li>
-                                        <li>1 FTP account & 5 cronjobs</li>
-                                        <li>Multiple PHP versions</li>
-                                        <li>mPanel control panel</li>
-                                        <li>756 MB RAM, 1 CPU core</li>
-                                        <li>6 MBPS IO Limit</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>AI tools included</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>AI image & Content generator</li>
-                                        <li class="disabled">AI blog generator</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Security Suite</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>Web application firewall</li>
-                                        <li class="disabled">Enhanced DDoS protection</li>
-                                        <li>Secure access manager</li>
-                                        <li class="disabled">Anycast nameservers</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Support & Policies</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>24/7 priority expert support</li>
-                                        <li>30-day money-back guarantee</li>
-                                        <li>99.9% uptime guarantee</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="see-all">Show features <i class="fas fa-chevron-down"></i></div>
-                    </div>
-
-                    <!-- Premium -->
-                    <div class="mw-pricing-card popular">
-                        <div class="popular-badge">MOST POPULAR</div>
-                        <div class="card-header">
-                            <h3>Premium</h3>
-                            <p>Best for blogs & startup websites.</p>
-                            <div class="discount-row">
-                                <span class="badge-orange">80% OFF</span>
-                                <span class="old-price">₹499</span>
-                            </div>
-                            <div class="price">₹<span class="price-value">99</span><span class="price-mo">/mo</span></div>
-                            <p class="pay-today">For 48 months, you pay ₹4,752 today – no price increase.</p>
-                            <div class="deal-row">
-                                <span class="plus-mo">+3 mo free<span class="tooltip">Pay for 48 months — use for 51 months.</span></span>
-                                <span class="limited-deal">Limited-Time Deal</span>
-                            </div>
-                        </div>
-                        <a href="cart.html" class="btn btn-mw-primary">Choose Plan</a>
-                        <div class="renewal-guarantee">Same Price at Renewal – Guaranteed</div>
-                        <ul class="card-features">
-                            <li>25 websites</li>
-                            <li>Free AI website builder</li>
-                            <li>Free AI credits</li>
-                            <li>50 GB NVMe storage</li>
-                            <li>Free domain for 1 year</li>
-                            <li>50 email accounts <span>FREE</span></li>
-                            <li>WordPress ready</li>
-                            <li>Free SSL for every website</li>
-                            <li class="disabled">Node.js web apps</li>
-                        </ul>
-                        <div class="mw-extra-features">
-                            <ul class="card-features">
-                                <li>Free email marketer tool</li>
-                                <li>AI WP speed boost <span class="badge-new">NEW</span></li>
-                                <li>LiteSpeed Server + CDN</li>
-                                <li>Free website migration</li>
-                                <li>India server location</li>
-                                <li>Daily backups</li>
-                                <li>Instant malware cleanup</li>
-                                <li>24/7 priority expert support</li>
-                            </ul>
-                            <div class="card-accordions">
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Managed WordPress</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>1-Click WP install</li>
-                                        <li>WP-CLI + SSH</li>
-                                        <li>Auto-Updates + Security scanner</li>
-                                        <li>Object caching</li>
-                                        <li>WordPress multisite</li>
-                                        <li>WooCommerce ready</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Developer Tools</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li class="disabled">Node.js, Python, Django</li>
-                                        <li>Laravel, CodeIgniter, PHP</li>
-                                        <li>SSH + GIT access</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Technical Specs</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>5,00,000 files & directories (inodes)</li>
-                                        <li>40 PHP workers</li>
-                                        <li>~30,000 visits monthly</li>
-                                        <li>100 subdomains</li>
-                                        <li>50 MySQL max user connections</li>
-                                        <li>350 databases</li>
-                                        <li>Unlimited FTP accounts & Cronjobs</li>
-                                        <li>Multiple PHP versions</li>
-                                        <li>mPanel control panel</li>
-                                        <li>2 GB RAM, 2 CPU cores</li>
-                                        <li>12 MBPS IO Limit</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>AI tools included</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>AI image & Content generator</li>
-                                        <li>AI blog generator</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Security Suite</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>Web application firewall</li>
-                                        <li>Enhanced DDoS protection</li>
-                                        <li>Secure access manager</li>
-                                        <li class="disabled">Anycast nameservers</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="see-all">Show features <i class="fas fa-chevron-down"></i></div>
-                    </div>
-
-                    <!-- Max -->
-                    <div class="mw-pricing-card">
-                        <div class="card-header">
-                            <h3>Max</h3>
-                            <p>Built for growing online projects.</p>
-                            <div class="discount-row">
-                                <span class="badge-orange">68% OFF</span>
-                                <span class="old-price">₹599</span>
-                            </div>
-                            <div class="price">₹<span class="price-value">189</span><span class="price-mo">/mo</span></div>
-                            <p class="pay-today">For 48 months, you pay ₹9,072 today – no price increase.</p>
-                            <div class="deal-row">
-                                <span class="plus-mo">+3 mo free<span class="tooltip">Pay for 48 months — use for 51 months.</span></span>
-                            </div>
-                        </div>
-                        <a href="cart.html" class="btn btn-outline-blue">Choose Plan</a>
-                        <div class="renewal-guarantee">Same Price at Renewal – Guaranteed</div>
-                        <ul class="card-features">
-                            <li>50 websites</li>
-                            <li>Free AI website builder</li>
-                            <li>Free AI credits</li>
-                            <li>100 GB NVMe storage</li>
-                            <li>Free domain for 1 year</li>
-                            <li>150 email accounts <span>FREE</span></li>
-                            <li>WordPress ready</li>
-                            <li>Free SSL for every website</li>
-                            <li>20 Node.js web apps <span class="badge-new">NEW</span></li>
-                        </ul>
-                        <div class="mw-extra-features">
-                            <ul class="card-features">
-                                <li>Free email marketer tool</li>
-                                <li>Built-in WP staging</li>
-                                <li>LiteSpeed Server + CDN</li>
-                                <li>Free website migration</li>
-                                <li>India server location</li>
-                                <li>Daily backups</li>
-                                <li>Instant malware cleanup</li>
-                                <li>24/7 priority expert support</li>
-                            </ul>
-                            <div class="card-accordions">
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Managed WordPress</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>1-Click WP install</li>
-                                        <li>WP-CLI + SSH</li>
-                                        <li>Auto-Updates + Security scanner</li>
-                                        <li>Object caching</li>
-                                        <li>WordPress multisite</li>
-                                        <li>WooCommerce ready</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Developer Tools</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>Node.js, Python, Django</li>
-                                        <li>Laravel, CodeIgniter, PHP</li>
-                                        <li>SSH + GIT access</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Technical Specs</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>7,00,000 files & directories (inodes)</li>
-                                        <li>100 PHP workers</li>
-                                        <li>~1,25,000 visits monthly</li>
-                                        <li>200 subdomains</li>
-                                        <li>75 MySQL max user connections</li>
-                                        <li>350 databases</li>
-                                        <li>Unlimited FTP accounts & Cronjobs</li>
-                                        <li>Multiple PHP versions</li>
-                                        <li>cPanel + 1 click installer</li>
-                                        <li>3 GB RAM, 3 CPU cores</li>
-                                        <li>20 MBPS IO Limit</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>AI tools included</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>AI image & Content generator</li>
-                                        <li>AI blog generator</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Security Suite</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>Web application firewall</li>
-                                        <li>Enhanced DDoS protection</li>
-                                        <li>Secure access manager</li>
-                                        <li class="disabled">Anycast nameservers</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="see-all">Show features <i class="fas fa-chevron-down"></i></div>
-                    </div>
-
-                    <!-- Cloud Pro -->
-                    <div class="mw-pricing-card">
-                        <div class="card-header">
-                            <h3>Cloud Pro</h3>
-                            <p>20x more power with cloud hosting.</p>
-                            <div class="discount-row">
-                                <span class="badge-orange">70% OFF</span>
-                                <span class="old-price">₹1499</span>
-                            </div>
-                            <div class="price">₹<span class="price-value">449</span><span class="price-mo">/mo</span></div>
-                            <p class="pay-today">For 48 months, you pay ₹21,552 today – no price increase.</p>
-                            <div class="deal-row">
-                                <span class="plus-mo">+3 mo free<span class="tooltip">Pay for 48 months — use for 51 months.</span></span>
-                            </div>
-                        </div>
-                        <a href="cart.html" class="btn btn-outline-blue">Choose Plan</a>
-                        <div class="renewal-guarantee">Same Price at Renewal – Guaranteed</div>
-                        <ul class="card-features">
-                            <li>100 websites</li>
-                            <li>Free AI website builder</li>
-                            <li>Free AI credits</li>
-                            <li>150 GB NVMe storage</li>
-                            <li>Free domain for 1 year</li>
-                            <li>150 email accounts <span>FREE</span></li>
-                            <li>WordPress ready</li>
-                            <li>Free SSL for every website</li>
-                            <li>40 Node.js web apps <span class="badge-new">NEW</span></li>
-                        </ul>
-                        <div class="mw-extra-features">
-                            <ul class="card-features">
-                                <li>Free email marketer tool</li>
-                                <li>Built-in WP staging</li>
-                                <li>LiteSpeed Server + CDN</li>
-                                <li>Free website migration</li>
-                                <li>India server location</li>
-                                <li>Daily backups</li>
-                                <li>Instant malware cleanup</li>
-                                <li>24/7 priority expert support</li>
-                            </ul>
-                            <div class="card-accordions">
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Managed WordPress</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>1-Click WP install</li>
-                                        <li>WP-CLI + SSH</li>
-                                        <li>Auto-Updates + Security scanner</li>
-                                        <li>Object caching</li>
-                                        <li>WordPress multisite</li>
-                                        <li>WooCommerce ready</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Developer Tools</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>Node.js, Python, Django</li>
-                                        <li>Laravel, CodeIgniter, PHP</li>
-                                        <li>SSH + GIT access</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Technical Specs</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>30,00,000 files & directories (inodes)</li>
-                                        <li>300 PHP workers</li>
-                                        <li>~5,00,000 visits monthly</li>
-                                        <li>500 subdomains</li>
-                                        <li>150 MySQL max user connections</li>
-                                        <li>Unlimited databases</li>
-                                        <li>Unlimited FTP accounts & Cronjobs</li>
-                                        <li>Multiple PHP versions</li>
-                                        <li>cPanel + 1 click installer</li>
-                                        <li>6 GB RAM, 6 CPU cores</li>
-                                        <li>50 MBPS IO Limit</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>AI tools included</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>AI image & Content generator</li>
-                                        <li>AI blog generator</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Security Suite</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>Web application firewall</li>
-                                        <li>Enhanced DDoS protection</li>
-                                        <li>Secure access manager</li>
-                                        <li>Anycast nameservers</li>
-                                    </ul>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header"><span>Support & Policies</span><i class="fas fa-plus"></i></div>
-                                    <ul class="sub-features">
-                                        <li>24/7 priority expert support</li>
-                                        <li>30-day money-back guarantee</li>
-                                        <li>99.9% uptime guarantee</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="see-all">Show features <i class="fas fa-chevron-down"></i></div>
-                    </div>
-                </div>
-                <p class="mw-gst-notice">Displayed prices do not include GST (18%).</p>
+                <div class="mw-pricing-grid" id="plansGrid" aria-live="polite" aria-busy="false"></div>
+                <p class="mw-gst-notice"><i class="fas fa-info-circle" aria-hidden="true"></i> All plan prices exclude 18% GST (added at checkout). Same price at renewal — guaranteed.</p>
             </div>
         </section>
         <section class="mw-guarantee-section">
@@ -734,7 +369,7 @@
                     </div>
                     <div class="guarantee-content">
                         <h2>30-Day Money Back</h2>
-                        <p>Experience Fraylon Hosting with confidence. If we don’t meet your expectations, simply <a href="#">request a refund</a> — we’ll process it promptly with <span class="text-blue">no questions asked</span>.</p>
+                        <p>Experience Fraylon Hosting with confidence. If we don't meet your expectations, simply <a href="#contact" data-scroll>request a refund</a> — we'll process it promptly with <span class="text-blue">no questions asked</span>.</p>
                         <div class="founder-signature">
                             <img loading="lazy" src="./src/assets/experience.svg" alt="Fraylon Signature" class="signature-img" style="filter:invert(1);opacity:0.6">
                             <div class="founder-info">
@@ -1141,48 +776,33 @@
         </section>
 
         <!-- Migration Section -->
-        <section class="mw-migration-section">
+        <section class="mw-migration-section" id="migration" aria-labelledby="migrationHeading">
             <div class="container">
                 <div class="migration-flex-container">
                     <div class="migration-content">
-                        <h1>Switch to Fraylon Hosting with <span class="text-highlight-blue">zero downtime</span></h1>
+                        <h2 id="migrationHeading">Switch to Fraylon Hosting with <span class="text-highlight-blue">zero downtime</span></h2>
                         <p class="migration-subtext">Our experts migrate your site for free — no data loss, no hassle.</p>
-                        
+
                         <div class="migration-checklist-box">
                             <h3>Why you can migrate with confidence</h3>
                             <ul class="migration-checklist">
-                                <li>
-                                    <i class="fas fa-check"></i>
-                                    <span>Free website migrations by qualified experts</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check"></i>
-                                    <span>No downtime during the actual transfer</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check"></i>
-                                    <span>No data lost or links broken during the migration</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check"></i>
-                                    <span>Support for WordPress and CMS</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check"></i>
-                                    <span>Comprehensive post-migration testing</span>
-                                </li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i><span>Free website migrations by qualified experts</span></li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i><span>No downtime during the actual transfer</span></li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i><span>No data lost or links broken during the migration</span></li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i><span>Support for WordPress and CMS</span></li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i><span>Comprehensive post-migration testing</span></li>
                             </ul>
                         </div>
-                        
+
                         <div class="migration-actions">
-                            <a href="mailto:hello@fraylon.com?subject=Website%20Migration%20Request" class="btn btn-mw-primary btn-lg">Migrate Now</a>
+                            <button type="button" class="btn btn-mw-primary btn-lg" data-open-modal="migrationModal" data-fraylon-action="start-migration">Migrate Now</button>
                             <p class="migration-guarantee-text">Free migration &bull; Zero downtime</p>
                         </div>
                     </div>
-                    
+
                     <div class="migration-visual">
                         <div class="migration-image-wrapper">
-                            <img loading="lazy" src="./src/assets/migration.avif" alt="Site Migration Support" class="migration-img">
+                            <img loading="lazy" src="./src/assets/migration.avif" alt="Illustration of a hosting migration being completed without downtime" class="migration-img">
                         </div>
                     </div>
                 </div>
@@ -1403,74 +1023,93 @@
             </div>
         </section>
         <!-- FAQ Section -->
-        <section class="faq-section">
+        <section class="faq-section" id="faq" aria-labelledby="faqHeading">
             <div class="faq-container">
-                <h2 class="faq-title">Web hosting FAQs</h2>
+                <h2 class="faq-title" id="faqHeading">Web hosting FAQs</h2>
 
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            Is Fraylon Hosting an Indian company?
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes, Fraylon Hosting is an Indian web hosting company incorporated in December 2025, headquartered in Hyderabad, Telangana. We provide affordable and reliable hosting solutions to businesses across India and worldwide.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            What features do I get with web hosting?
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>With Fraylon Hosting web hosting, you get SSD storage, free SSL certificate, free domain, LiteSpeed web servers, cPanel control panel, one-click WordPress installation, daily backups, and 24/7 expert support.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            How is Fraylon Hosting technical support?
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Fraylon Hosting provides 24/7 technical support via live chat, phone, and email. Our expert support team is always ready to help you resolve any issues quickly and efficiently.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            Can I migrate my website to Fraylon Hosting?
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes! Fraylon Hosting offers free website migration assistance. Our team of experts will migrate your website from your existing host to Fraylon without any downtime and completely free of charge.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            Why choose Fraylon Hosting?
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Fraylon Hosting offers the best combination of performance, price, and support. With a 99.9% uptime guarantee, LiteSpeed servers for faster loading, free SSL, and 24/7 expert support, we are the right choice for businesses across India.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                            Can I upgrade my web hosting plan later?
-                            <i class="fas fa-chevron-down faq-icon"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Absolutely! You can upgrade your hosting plan at any time as your website grows. Fraylon Hosting makes it easy to scale from shared hosting to VPS or dedicated servers with zero downtime.</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="faq-list" id="faqList" role="region" aria-label="Frequently asked questions"></div>
 
                 <div class="faq-cta">
-                    <a href="#" class="faq-btn">View all FAQs</a>
+                    <a href="coming-soon.html" class="faq-btn">View all FAQs</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Support Section -->
+        <section class="mw-contact-section" id="contact" aria-labelledby="contactHeading">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-intro">
+                        <span class="contact-eyebrow"><span class="eyebrow-pulse" aria-hidden="true"></span> We're online · 24/7</span>
+                        <h2 id="contactHeading">Talk to a Fraylon human.</h2>
+                        <p>Sales, migration, billing or just curious — we're available around the clock. Average chat response: under 30 seconds.</p>
+
+                        <ul class="contact-channels">
+                            <li>
+                                <span class="channel-icon channel-mail" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:support@fraylon.com">support@fraylon.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="channel-icon channel-chat" aria-hidden="true"><i class="fas fa-comments"></i></span>
+                                <div>
+                                    <strong>Live chat</strong>
+                                    <button type="button" class="contact-linkish" data-fraylon-action="open-chat" data-open-modal="contactModal">Start a conversation</button>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="channel-icon channel-ticket" aria-hidden="true"><i class="fas fa-headset"></i></span>
+                                <div>
+                                    <strong>Support tickets</strong>
+                                    <button type="button" class="contact-linkish" data-open-modal="contactModal" data-fraylon-action="open-ticket">Open a ticket</button>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="channel-icon channel-kb" aria-hidden="true"><i class="fas fa-book-open"></i></span>
+                                <div>
+                                    <strong>Knowledge base</strong>
+                                    <a href="coming-soon.html">Browse articles &amp; tutorials</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <p class="contact-hours"><i class="fas fa-clock" aria-hidden="true"></i> Support hours: 24×7, every day. Based in Hyderabad, India · IST.</p>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" novalidate aria-label="Contact Fraylon support">
+                        <div class="contact-form-header">
+                            <h3>Send us a message</h3>
+                            <p>We'll get back within one business hour.</p>
+                        </div>
+                        <div class="form-row two">
+                            <div class="form-field">
+                                <label for="cfName">Your name</label>
+                                <input type="text" id="cfName" name="name" required autocomplete="name">
+                            </div>
+                            <div class="form-field">
+                                <label for="cfEmail">Email</label>
+                                <input type="email" id="cfEmail" name="email" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="cfTopic">Topic</label>
+                            <select id="cfTopic" name="topic">
+                                <option value="sales">Sales &amp; pre-purchase</option>
+                                <option value="migration">Site migration</option>
+                                <option value="billing">Billing</option>
+                                <option value="technical">Technical support</option>
+                                <option value="other">Something else</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="cfMessage">Message</label>
+                            <textarea id="cfMessage" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-mw-primary" data-fraylon-action="submit-contact">Send message <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+                        <p class="form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
+                    </form>
                 </div>
             </div>
         </section>
@@ -1482,7 +1121,7 @@
                     <div class="cta-banner-content">
                         <p class="cta-banner-label">Best Value Without Renewal Surprises</p>
                         <h2 class="cta-banner-headline">Save up to 80% today — pay<br>the same at renewal.</h2>
-                        <a href="#" class="cta-banner-btn">Claim Offer Now</a>
+                        <a href="#plans-section" class="cta-banner-btn" data-scroll data-fraylon-action="cta-claim">Claim Offer Now</a>
                         <p class="cta-banner-guarantee">30-day money-back guarantee &bull; No hidden charges</p>
                     </div>
                 </div>
@@ -1498,11 +1137,11 @@
                     <img src="logo.png" alt="Fraylon Logo" class="footer-logo-white">
                     <p class="brand-desc">Fraylon Hosting is an Indian web hosting company, incorporated December 2025 and headquartered in Hyderabad, Telangana. We help businesses, developers, and startups host their websites reliably across India.</p>
                     <div class="footer-socials">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="coming-soon.html" aria-label="Fraylon on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="coming-soon.html" aria-label="Fraylon on X / Twitter"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                        <a href="coming-soon.html" aria-label="Fraylon on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="coming-soon.html" aria-label="Fraylon on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="coming-soon.html" aria-label="Fraylon on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -1511,50 +1150,50 @@
                         <h3>HOSTING</h3>
                         <ul>
                             <li><a href="web-hosting.html">Web Hosting</a></li>
-                            <li><a href="#">Cloud Hosting</a></li>
-                            <li><a href="#">WordPress Hosting</a></li>
-                            <li><a href="#">Managed WordPress</a></li>
-                            <li><a href="#">Node.js Hosting</a></li>
-                            <li><a href="#">SSL Certificates</a></li>
+                            <li><a href="hosting.html#cloud">Cloud Hosting</a></li>
+                            <li><a href="wordpress.html">WordPress Hosting</a></li>
+                            <li><a href="wordpress.html#managed">Managed WordPress</a></li>
+                            <li><a href="hosting.html#nodejs">Node.js Hosting</a></li>
+                            <li><a href="coming-soon.html">SSL Certificates</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h3>VPS & SERVERS</h3>
+                        <h3>VPS &amp; SERVERS</h3>
                         <ul>
-                            <li><a href="#">VPS Hosting</a></li>
-                            <li><a href="#">Managed VPS</a></li>
-                            <li><a href="#">Windows VPS</a></li>
-                            <li><a href="#">Dedicated Server</a></li>
+                            <li><a href="coming-soon.html">VPS Hosting</a></li>
+                            <li><a href="coming-soon.html">Managed VPS</a></li>
+                            <li><a href="coming-soon.html">Windows VPS</a></li>
+                            <li><a href="coming-soon.html">Dedicated Server</a></li>
                         </ul>
-                        <h3 class="mt-4">DOMAIN & EMAIL</h3>
+                        <h3 class="mt-4">DOMAIN &amp; EMAIL</h3>
                         <ul>
-                            <li><a href="#">Domain Registration</a></li>
-                            <li><a href="#">Business Email</a></li>
-                            <li><a href="#">SSL Certificate</a></li>
+                            <li><a href="coming-soon.html">Domain Registration</a></li>
+                            <li><a href="coming-soon.html">Business Email</a></li>
+                            <li><a href="coming-soon.html">SSL Certificate</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h3>TOOLS</h3>
                         <ul>
-                            <li><a href="#">AI Website Builder</a></li>
+                            <li><a href="coming-soon.html">AI Website Builder</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h3>COMPANY</h3>
                         <ul>
                             <li><a href="about-us.html">About Fraylon</a></li>
-                            <li><a href="#">Customer Reviews</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Knowledge Base</a></li>
-                            <li><a href="#">Video Tutorials</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="coming-soon.html">Customer Reviews</a></li>
+                            <li><a href="coming-soon.html">Blog</a></li>
+                            <li><a href="coming-soon.html">Knowledge Base</a></li>
+                            <li><a href="coming-soon.html">Video Tutorials</a></li>
+                            <li><a href="#contact" data-scroll>Contact Us</a></li>
+                            <li><a href="coming-soon.html">Sitemap</a></li>
                         </ul>
                         <h3 class="mt-4">LEGAL</h3>
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">SLA</a></li>
+                            <li><a href="coming-soon.html">Privacy Policy</a></li>
+                            <li><a href="coming-soon.html">Terms of Service</a></li>
+                            <li><a href="coming-soon.html">SLA</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1566,61 +1205,191 @@
                 </div>
                 <div class="payment-row">
                     <div class="payment-icons">
-                        <img loading="lazy" src="./src/assets/visa_icon.svg" alt="Visa">
-                        <img loading="lazy" src="./src/assets/mastercard_icon.svg" alt="Mastercard">
-                        <img loading="lazy" src="./src/assets/rupay_icon.svg" alt="Rupay">
-                        <img loading="lazy" src="./src/assets/upi_icon.svg" alt="UPI">
-                        <img loading="lazy" src="./src/assets/gpay_icon.svg" alt="GPay">
-                        <img loading="lazy" src="./src/assets/phone-pe.svg" alt="PhonePe">
+                        <img loading="lazy" src="./src/assets/visa_icon.svg" alt="Visa" width="40" height="24">
+                        <img loading="lazy" src="./src/assets/mastercard_icon.svg" alt="Mastercard" width="40" height="24">
+                        <img loading="lazy" src="./src/assets/rupay_icon.svg" alt="RuPay" width="40" height="24">
+                        <img loading="lazy" src="./src/assets/upi_icon.svg" alt="UPI" width="40" height="24">
+                        <img loading="lazy" src="./src/assets/gpay_icon.svg" alt="Google Pay" width="40" height="24">
+                        <img loading="lazy" src="./src/assets/phone-pe.svg" alt="PhonePe" width="40" height="24">
                     </div>
-                    <a href="#" class="more-payments">And more payment options</a>
+                    <a href="coming-soon.html" class="more-payments">And more payment options</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Sticky mobile CTA bar -->
-    <div class="mw-sticky-cta" id="stickyCta">
+    <div class="mw-sticky-cta" id="stickyCta" aria-hidden="true">
       <div class="mw-sticky-cta-price">
-        <strong>₹69<span style="font-size:14px;font-weight:600">/mo</span></strong>
+        <strong>₹<span id="stickyCtaPrice">69</span><span style="font-size:14px;font-weight:600">/mo</span></strong>
         <span>Same price at renewal</span>
       </div>
-      <a href="#plans-section">Get Started</a>
+      <a href="#plans-section" data-scroll data-fraylon-action="sticky-cta-get-started">Get Started</a>
+    </div>
+
+    <!-- Floating support button -->
+    <button class="mw-chat-bubble" type="button" aria-label="Open support chat" data-open-modal="contactModal" data-fraylon-action="open-chat-bubble">
+        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+    </button>
+
+    <!-- Mobile drawer -->
+    <div class="mw-mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+    <nav class="mw-mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+        <div class="mw-mobile-nav-header">
+            <img src="logo.png" alt="Fraylon Hosting" class="mw-mobile-logo">
+            <button class="mw-mobile-close" id="mobileClose" type="button" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
+        </div>
+        <ul class="mw-mobile-nav-ul">
+            <li><a href="#home" data-scroll data-nav-section="home">Home</a></li>
+            <li class="has-sub">
+                <button type="button" class="mw-mobile-sub-toggle" aria-expanded="false">Hosting <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                <ul class="mw-mobile-sub">
+                    <li><a href="hosting.html">Overview</a></li>
+                    <li><a href="web-hosting.html">Web Hosting</a></li>
+                    <li><a href="hosting.html#cloud">Cloud Hosting</a></li>
+                    <li><a href="hosting.html#nodejs">Node.js Hosting</a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <button type="button" class="mw-mobile-sub-toggle" aria-expanded="false">WordPress <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                <ul class="mw-mobile-sub">
+                    <li><a href="wordpress.html">WordPress Hosting</a></li>
+                    <li><a href="wordpress.html#managed">Managed WordPress</a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <button type="button" class="mw-mobile-sub-toggle" aria-expanded="false">VPS &amp; Dedicated <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                <ul class="mw-mobile-sub">
+                    <li><a href="coming-soon.html">VPS Hosting</a></li>
+                    <li><a href="coming-soon.html">Managed VPS</a></li>
+                    <li><a href="coming-soon.html">Windows VPS</a></li>
+                    <li><a href="coming-soon.html">Dedicated Server</a></li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <button type="button" class="mw-mobile-sub-toggle" aria-expanded="false">Domain &amp; Email <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                <ul class="mw-mobile-sub">
+                    <li><a href="coming-soon.html">Domain</a></li>
+                    <li><a href="coming-soon.html">Business Email</a></li>
+                    <li><a href="coming-soon.html">SSL Certificate</a></li>
+                </ul>
+            </li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#faq" data-scroll data-nav-section="faq">FAQs</a></li>
+            <li><a href="#contact" data-scroll data-nav-section="contact">Support</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+        </ul>
+        <button type="button" class="btn btn-mw-primary mw-mobile-cta" data-open-modal="accountModal">My Account</button>
+    </nav>
+
+    <!-- Coming-soon toast -->
+    <div class="mw-toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Modals -->
+    <div class="mw-modal-root" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle" aria-hidden="true">
+        <div class="mw-modal-backdrop" data-close-modal></div>
+        <div class="mw-modal-panel" role="document">
+            <button type="button" class="mw-modal-close" data-close-modal aria-label="Close"><i class="fas fa-times" aria-hidden="true"></i></button>
+            <div class="mw-modal-head">
+                <span class="mw-modal-kicker">Customer area</span>
+                <h2 id="accountModalTitle">Sign in to your dashboard</h2>
+                <p>Manage sites, billing, backups, and DNS in one place.</p>
+            </div>
+            <form class="mw-modal-form" id="accountForm" novalidate>
+                <div class="form-field">
+                    <label for="amEmail">Email</label>
+                    <input type="email" id="amEmail" name="email" required autocomplete="email" placeholder="you@company.com">
+                </div>
+                <div class="form-field">
+                    <label for="amPassword">Password</label>
+                    <input type="password" id="amPassword" name="password" required autocomplete="current-password" placeholder="••••••••">
+                </div>
+                <div class="form-row split">
+                    <label class="checkbox-line"><input type="checkbox" name="remember"> Stay signed in</label>
+                    <a href="coming-soon.html">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-mw-primary" data-fraylon-action="submit-login">Sign in</button>
+                <p class="form-status" id="accountFormStatus" role="status" aria-live="polite"></p>
+                <p class="modal-foot">No account yet? <a href="coming-soon.html">Create one in 60 seconds</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="mw-modal-root" id="migrationModal" role="dialog" aria-modal="true" aria-labelledby="migrationModalTitle" aria-hidden="true">
+        <div class="mw-modal-backdrop" data-close-modal></div>
+        <div class="mw-modal-panel" role="document">
+            <button type="button" class="mw-modal-close" data-close-modal aria-label="Close"><i class="fas fa-times" aria-hidden="true"></i></button>
+            <div class="mw-modal-head">
+                <span class="mw-modal-kicker">Free site migration</span>
+                <h2 id="migrationModalTitle">Tell us about your site</h2>
+                <p>Our migrations team will reach out within one business hour.</p>
+            </div>
+            <form class="mw-modal-form" id="migrationForm" novalidate>
+                <div class="form-row two">
+                    <div class="form-field">
+                        <label for="mfName">Your name</label>
+                        <input type="text" id="mfName" name="name" required autocomplete="name">
+                    </div>
+                    <div class="form-field">
+                        <label for="mfEmail">Email</label>
+                        <input type="email" id="mfEmail" name="email" required autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-row two">
+                    <div class="form-field">
+                        <label for="mfDomain">Domain to migrate</label>
+                        <input type="text" id="mfDomain" name="domain" placeholder="example.com" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="mfCurrentHost">Current host</label>
+                        <input type="text" id="mfCurrentHost" name="currentHost" placeholder="GoDaddy, Hostinger…">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="mfStack">Site type</label>
+                    <select id="mfStack" name="stack">
+                        <option value="wordpress">WordPress</option>
+                        <option value="static">Static HTML / Jamstack</option>
+                        <option value="php">Custom PHP</option>
+                        <option value="node">Node.js</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="mfNotes">Anything we should know? <span class="muted">(optional)</span></label>
+                    <textarea id="mfNotes" name="notes" rows="3" placeholder="DB sizes, custom configs, downtime preferences…"></textarea>
+                </div>
+                <button type="submit" class="btn btn-mw-primary" data-fraylon-action="submit-migration">Request migration</button>
+                <p class="form-status" id="migrationFormStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="mw-modal-root" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" aria-hidden="true">
+        <div class="mw-modal-backdrop" data-close-modal></div>
+        <div class="mw-modal-panel" role="document">
+            <button type="button" class="mw-modal-close" data-close-modal aria-label="Close"><i class="fas fa-times" aria-hidden="true"></i></button>
+            <div class="mw-modal-head">
+                <span class="mw-modal-kicker">Live chat</span>
+                <h2 id="contactModalTitle">Start a conversation</h2>
+                <p>Send us a quick message — average response time is under 30 seconds.</p>
+            </div>
+            <form class="mw-modal-form" id="quickContactForm" novalidate>
+                <div class="form-field">
+                    <label for="qcEmail">Your email</label>
+                    <input type="email" id="qcEmail" name="email" required autocomplete="email">
+                </div>
+                <div class="form-field">
+                    <label for="qcMessage">What can we help with?</label>
+                    <textarea id="qcMessage" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-mw-primary" data-fraylon-action="submit-quick-contact">Send message</button>
+                <p class="form-status" id="quickContactStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
     </div>
 
     <script type="module" src="./src/main.js"></script>
-    <div class="mw-chat-bubble" onclick="window.location.href='mailto:support@fraylon.com?subject=Hello%20Fraylon'" style="cursor:pointer">
-        <i class="fas fa-comment-dots"></i>
-    </div>
-<div class="mw-mobile-overlay" id="mobileOverlay"></div>
-<nav class="mw-mobile-nav" id="mobileNav">
-    <div class="mw-mobile-nav-header">
-        <img src="logo.png" alt="Fraylon Hosting" class="mw-mobile-logo">
-        <button class="mw-mobile-close" id="mobileClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
-    </div>
-    <ul class="mw-mobile-nav-ul">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Hosting</a></li>
-        <li><a href="#">WordPress</a></li>
-        <li><a href="#">VPS &amp; Dedicated</a></li>
-        <li><a href="#">Domain &amp; Email</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-    </ul>
-    <a href="mailto:support@fraylon.com?subject=Account%20Login%20Request" class="btn btn-mw-primary mw-mobile-cta">My Account</a>
-</nav>
-<script>
-(function(){
-    var btn=document.getElementById('hamburgerBtn'),nav=document.getElementById('mobileNav'),
-    overlay=document.getElementById('mobileOverlay'),cls=document.getElementById('mobileClose');
-    function openNav(){nav.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
-    function closeNav(){nav.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
-    if(btn)btn.addEventListener('click',openNav);
-    if(cls)cls.addEventListener('click',closeNav);
-    if(overlay)overlay.addEventListener('click',closeNav);
-})();
-</script>
 </body>
 </html>
 
