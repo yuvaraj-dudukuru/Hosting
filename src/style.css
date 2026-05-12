@@ -7453,24 +7453,28 @@ button.mw-chat-bubble {
   }
   .faq-answer p { font-size: 15px !important; }
 
-  /* ─────── Comparison table → stacked row-cards ─────── */
-  /* 1. Kill horizontal scroll + min-width that were forcing the slider */
+  /* ─────── Comparison table — mobile redesign ───────
+     Cleaner layout: ONE logo strip on top, value rows below
+     with no repeated provider labels. Column alignment makes
+     it obvious which value belongs to which provider.        */
+
+  /* Kill horizontal scroll forced by older "min-width" rules */
   .comparison-table-wrapper {
     overflow-x: visible !important;
     width: 100% !important;
-    padding-bottom: 0;
+    padding: 0 !important;
+    border-radius: 0 !important;
   }
-  .comparison-table,
-  .comparison-table table {
+  .comparison-table-wrapper::after { display: none !important; }
+  .comparison-table {
     min-width: 0 !important;
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
   }
-  /* Hide the scroll hint text */
   .mw-scroll-hint { display: none !important; }
 
-  /* 2. Flatten table semantics so each row becomes a card */
+  /* Flatten the table primitives */
   .comparison-table,
   .comparison-table thead,
   .comparison-table tbody,
@@ -7483,59 +7487,73 @@ button.mw-chat-bubble {
     height: auto;
   }
 
-  /* 3. Convert the thead into a sticky provider strip at the top */
-  .comparison-table thead { position: relative; margin-bottom: 14px; }
+  /* ── (A) Top logo strip — clean, no inversion ── */
+  .comparison-table thead { margin-bottom: 16px; }
   .comparison-table thead tr {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    background: #f7faff;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    background: #fff;
     border: 1px solid #e8eefc;
     border-radius: 14px;
-    padding: 12px;
+    overflow: hidden;
     box-shadow: 0 12px 30px -25px rgba(20, 110, 245, 0.4);
   }
-  .comparison-table thead th { padding: 0 !important; text-align: center; }
-  .comparison-table thead th.row-label { display: none; }
+  .comparison-table thead th.row-label { display: none !important; }
+
+  .comparison-table thead th {
+    padding: 18px 8px !important;
+    text-align: center !important;
+    background: #fff !important;
+    border: none !important;
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+  }
+  /* Vertical dividers between provider cells */
+  .comparison-table thead th + th { box-shadow: inset 1px 0 0 #eef2f9; }
+
+  /* Fraylon column accent: small blue top stripe */
   .comparison-table thead th.col-fraylon.highlighted {
-    background: linear-gradient(135deg, #146EF5 0%, #5fa0ff 100%) !important;
-    border-radius: 10px;
-    padding: 10px 6px !important;
-    color: #fff;
+    background: linear-gradient(180deg, #f5f9ff 0%, #ffffff 100%) !important;
   }
-  .comparison-table thead th.col-fraylon.highlighted .table-logo {
-    filter: brightness(0) invert(1);
-    max-height: 22px;
+  .comparison-table thead th.col-fraylon.highlighted::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #146EF5, #5fa0ff);
   }
-  .comparison-table thead th.col-other {
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px 6px !important;
-    border: 1px solid #e8eefc;
+
+  /* Logos: keep them in their natural color, sized consistently */
+  .comparison-table thead th .col-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   .comparison-table thead th .table-logo,
   .comparison-table thead th .table-logo-small {
-    max-height: 22px;
+    max-height: 26px;
+    max-width: 100%;
     width: auto;
+    height: auto;
+    object-fit: contain;
     margin: 0 auto;
     display: block;
+    filter: none !important;
   }
 
-  /* 4. Each tbody row becomes its own card */
-  .comparison-table tbody tr {
-    background: #fff;
-    border: 1px solid #e8eefc;
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    box-shadow: 0 12px 25px -25px rgba(15, 23, 42, 0.4);
-  }
+  /* ── (B) Section divider rows ── */
   .comparison-table tbody tr.section-row {
+    display: block !important;
     background: transparent;
     border: none;
     box-shadow: none;
-    padding: 14px 4px 4px;
-    margin-bottom: 0;
+    padding: 18px 2px 6px;
+    margin: 0;
   }
   .comparison-table tbody tr.section-row .row-label {
     font-size: 11px !important;
@@ -7545,112 +7563,149 @@ button.mw-chat-bubble {
     color: #146EF5;
     padding: 0 !important;
     width: 100% !important;
+    border: none !important;
   }
-  .comparison-table tbody tr.section-row td:not(.row-label) { display: none; }
+  .comparison-table tbody tr.section-row td:not(.row-label) { display: none !important; }
 
-  /* The row-label becomes a card heading */
-  .comparison-table tbody tr .row-label {
+  /* ── (C) Data rows: row label on top, three values aligned beneath ── */
+  .comparison-table tbody tr:not(.section-row) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "label label label"
+      "f h g";
+    background: #fff;
+    border: 1px solid #e8eefc;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 24px -22px rgba(15, 23, 42, 0.4);
+    column-gap: 0;
+    row-gap: 10px;
+  }
+
+  .comparison-table tbody tr:not(.section-row) .row-label {
+    grid-area: label;
     width: 100% !important;
     font-size: 14px !important;
     font-weight: 600;
     color: #0f172a;
-    padding: 0 0 10px !important;
+    padding: 0 !important;
     border: none !important;
     text-align: left;
   }
 
-  /* The 3 provider value cells line up in a 3-col grid */
-  .comparison-table tbody tr {
-    display: grid !important;
-    grid-template-columns: 1fr;
-  }
-  .comparison-table tbody tr.section-row { display: block !important; }
-  .comparison-table tbody tr > td:not(.row-label) {
-    display: inline-grid;
-    place-items: center;
-    padding: 10px 6px !important;
-    border: 1px solid #f1f5f9 !important;
-    border-radius: 10px;
+  /* Value cells — clean, no per-row provider label */
+  .comparison-table tbody tr:not(.section-row) > td:not(.row-label) {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 4px !important;
     font-size: 13px;
     color: #475569;
-    text-align: center;
-    min-height: 48px;
+    min-height: 56px;
+    border: none !important;
+    background: #fafbfd;
   }
-  /* Layout: pack the 3 provider cells into a 3-col strip below the label */
-  .comparison-table tbody tr {
-    grid-template-areas:
-      "label label label"
-      "f h g";
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 6px;
+  /* Divider lines BETWEEN value cells (not before the first one) */
+  .comparison-table tbody tr:not(.section-row) > td:not(.row-label) + td:not(.row-label) {
+    box-shadow: inset 1px 0 0 #eef2f9;
   }
-  .comparison-table tbody tr .row-label { grid-area: label; }
-  .comparison-table tbody tr td.col-fraylon { grid-area: f; }
-  /* nth-of-type(2) is the Hostinger col (after Fraylon) */
-  .comparison-table tbody tr td.col-other:nth-of-type(3) { grid-area: h; }
-  .comparison-table tbody tr td.col-other:nth-of-type(4) { grid-area: g; }
+  /* Rounded corners on the value-strip ends */
+  .comparison-table tbody tr:not(.section-row) td.col-fraylon {
+    grid-area: f;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .comparison-table tbody tr:not(.section-row) td.col-other:nth-of-type(3) { grid-area: h; }
+  .comparison-table tbody tr:not(.section-row) td.col-other:nth-of-type(4) {
+    grid-area: g;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 
-  /* Provider-tag pill above each value */
-  .comparison-table tbody tr td.col-fraylon::before,
-  .comparison-table tbody tr td.col-other::before {
-    display: block;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 4px;
+  /* Fraylon column always tinted so the user always knows which one we are */
+  .comparison-table tbody tr:not(.section-row) td.col-fraylon.highlighted {
+    background: linear-gradient(160deg, #eef4ff 0%, #f7faff 100%) !important;
+    color: #0f172a;
+    font-weight: 600;
+    position: relative;
   }
-  .comparison-table tbody tr td.col-fraylon::before {
-    content: "Fraylon";
-    color: #146EF5;
+  .comparison-table tbody tr:not(.section-row) td.col-fraylon.highlighted::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #146EF5, #5fa0ff);
+    opacity: 0.35;
   }
-  .comparison-table tbody tr td.col-other:nth-of-type(3)::before {
-    content: "Hostinger";
-    color: #64748b;
-  }
-  .comparison-table tbody tr td.col-other:nth-of-type(4)::before {
-    content: "GoDaddy";
-    color: #64748b;
-  }
-  /* Highlight the Fraylon cell */
-  .comparison-table tbody tr td.col-fraylon.highlighted {
-    background: linear-gradient(160deg, #eef4ff 0%, #ffffff 100%) !important;
-    border: 1px solid #c8d8ff !important;
-  }
+
+  /* Typography inside cells */
   .comparison-table .price-big {
-    font-size: 15px !important;
+    font-size: 16px !important;
     font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
   }
-  .comparison-table .price-renewal { font-size: 13px; font-weight: 700; display: block; }
+  .comparison-table .price-renewal {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    display: block;
+    line-height: 1.2;
+  }
   .comparison-table .renewal-note {
     display: block;
     font-size: 10px;
     color: #146EF5;
-    margin-top: 2px;
+    margin-top: 4px;
+    line-height: 1.2;
   }
   .comparison-table .price-increase {
     display: block;
     font-size: 10px;
     color: #dc2626;
-    margin-top: 2px;
+    margin-top: 4px;
+    line-height: 1.2;
   }
-  .comparison-table .val-bold { font-size: 14px; font-weight: 700; color: #0f172a; }
-  .comparison-table .text-green { font-size: 18px; }
-  .comparison-table .text-grey { font-size: 18px; }
+  .comparison-table .val-bold { font-size: 15px; font-weight: 700; color: #0f172a; }
+  .comparison-table .text-green { font-size: 20px; }
+  .comparison-table .text-grey { font-size: 20px; }
 
-  /* tfoot button row */
+  /* ── (D) Footer CTA row ── */
   .comparison-table tfoot tr {
-    display: block;
-    margin-top: 14px;
+    display: block !important;
+    margin-top: 16px;
     padding: 0;
     border: none;
     background: none;
     box-shadow: none;
   }
-  .comparison-table tfoot td { display: none; padding: 0 !important; border: none !important; }
+  .comparison-table tfoot td {
+    display: none !important;
+    padding: 0 !important;
+    border: none !important;
+  }
   .comparison-table tfoot td.col-fraylon.highlighted {
-    display: block;
+    display: block !important;
     text-align: center;
   }
   .comparison-table tfoot td.col-fraylon .btn { width: 100%; }
+
+  /* Tighter section spacing on phones */
+  .mw-comparison-section { padding: 56px 0 !important; }
+  .comparison-header h2 { font-size: 24px !important; }
+}
+
+@media (max-width: 380px) {
+  /* Very small phones: drop value font slightly + collapse padding */
+  .comparison-table tbody tr:not(.section-row) { padding: 12px; }
+  .comparison-table tbody tr:not(.section-row) > td:not(.row-label) {
+    font-size: 12px;
+    padding: 8px 2px !important;
+  }
+  .comparison-table .price-big { font-size: 14px !important; }
+  .comparison-table .price-renewal { font-size: 13px; }
 }
