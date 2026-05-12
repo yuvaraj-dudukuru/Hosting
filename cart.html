@@ -199,7 +199,11 @@
 
                         <p class="total-savings-text">Your total savings: <span>₹25,837.28</span></p>
 
-                        <button class="btn-checkout" onclick="window.location.href='details.html'">Continue to Your Details</button>
+                        <button class="btn-checkout" id="cartPayButton" type="button">
+                            <span class="cart-pay-label">Continue to Payment</span>
+                            <span class="cart-pay-spinner" hidden><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                        <p class="cart-pay-status" id="cartPayStatus" role="status" aria-live="polite"></p>
 
                         <div class="checkout-trust-line">
                             <i class="far fa-check-circle"></i>
@@ -351,6 +355,60 @@
     if(cls)cls.addEventListener('click',closeNav);
     if(overlay)overlay.addEventListener('click',closeNav);
 })();
+</script>
+<script type="module">
+    import { startCheckout } from './src/payment.js';
+
+    // Read plan + duration from the URL (set when user clicks "Choose Plan").
+    // Fallback: the Premium / 48 mo combo shown in the cart summary by default.
+    const params = new URLSearchParams(location.search);
+    const planId = params.get('plan') || 'premium';
+    const durationMonths = parseInt(params.get('duration') || '48', 10);
+
+    const btn = document.getElementById('cartPayButton');
+    const label = btn?.querySelector('.cart-pay-label');
+    const spinner = btn?.querySelector('.cart-pay-spinner');
+    const status = document.getElementById('cartPayStatus');
+
+    function setBusy(busy, text) {
+        if (!btn) return;
+        btn.disabled = busy;
+        if (label) label.textContent = text || (busy ? 'Opening secure payment…' : 'Continue to Payment');
+        if (spinner) spinner.hidden = !busy;
+    }
+    function setStatus(msg, kind) {
+        if (!status) return;
+        status.textContent = msg || '';
+        status.className = 'cart-pay-status' + (kind ? ' ' + kind : '');
+    }
+
+    btn?.addEventListener('click', async () => {
+        setBusy(true);
+        setStatus('');
+        try {
+            const result = await startCheckout({
+                planId,
+                durationMonths,
+                onSuccess: (v) => {
+                    setStatus('Payment confirmed. Redirecting…', 'success');
+                    setTimeout(() => {
+                        window.location.href = `details.html?orderId=${encodeURIComponent(v.orderId)}&status=paid`;
+                    }, 800);
+                },
+                onFailure: (err) => {
+                    setStatus(err.message || 'Payment failed. Please try again.', 'error');
+                },
+                onDismiss: () => {
+                    setStatus('Payment cancelled. You can try again anytime.', 'info');
+                },
+            });
+            if (result?.status === 'paid') return; // already redirecting
+        } catch (err) {
+            setStatus(err.message || 'Could not start payment.', 'error');
+        } finally {
+            setBusy(false);
+        }
+    });
 </script>
 </body>
 </html>

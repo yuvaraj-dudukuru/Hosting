@@ -1148,10 +1148,33 @@
      * Return a string from a hook to display a custom success message in the UI.
      */
     window.fraylonHooks = window.fraylonHooks || {
-        onPlanSelect(planId, months) {
+        async onPlanSelect(planId, months) {
             console.log('[fraylon] onPlanSelect', planId, months);
-            const url = `cart.html?plan=${encodeURIComponent(planId)}&duration=${months}`;
-            window.location.href = url;
+            try {
+                const { startCheckout } = await import('./payment.js');
+                await startCheckout({
+                    planId,
+                    durationMonths: months,
+                    onSuccess: (v) => {
+                        window.location.href = `details.html?orderId=${encodeURIComponent(v.orderId)}&status=paid`;
+                    },
+                    onFailure: (err) => {
+                        console.error('Checkout failed', err);
+                        const toast = document.getElementById('toast');
+                        if (toast) {
+                            toast.textContent = err.message || 'Payment failed. Please try again.';
+                            toast.className = 'mw-toast show error';
+                            setTimeout(() => toast.classList.remove('show'), 4000);
+                        } else {
+                            alert(err.message || 'Payment failed.');
+                        }
+                    },
+                });
+            } catch (err) {
+                console.error('Could not start checkout', err);
+                // Fallback to the static cart page.
+                window.location.href = `cart.html?plan=${encodeURIComponent(planId)}&duration=${months}`;
+            }
         },
         onDurationChange(months) {
             console.log('[fraylon] onDurationChange', months);

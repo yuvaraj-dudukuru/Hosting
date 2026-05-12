@@ -12,6 +12,18 @@ dist
 dist-ssr
 *.local
 
+# Secrets — never commit
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Local SQLite database
+server/data/*.db
+server/data/*.db-journal
+server/data/*.db-wal
+server/data/*.db-shm
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -7709,3 +7709,32 @@ button.mw-chat-bubble {
   .comparison-table .price-big { font-size: 14px !important; }
   .comparison-table .price-renewal { font-size: 13px; }
 }
+
+/* ─────────────────────────────────────────────
+   Cart — payment button busy/status states
+   ───────────────────────────────────────────── */
+.btn-checkout {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.2s ease;
+}
+.btn-checkout:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.btn-checkout .cart-pay-spinner i {
+  font-size: 14px;
+}
+.cart-pay-status {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 18px;
+  color: #475569;
+}
+.cart-pay-status.error { color: #dc2626; }
+.cart-pay-status.success { color: #059669; }
+.cart-pay-status.info { color: #146EF5; }
