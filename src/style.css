@@ -2699,8 +2699,9 @@ tfoot td.col-fraylon.highlighted {
   .trust-left {
     justify-content: center;
   }
+  /* Start scaling type down before lines start wrapping */
   .trust-text-list li {
-    font-size: 32px;
+    font-size: clamp(20px, 3.4vw, 32px);
   }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2708,6 +2709,88 @@ tfoot td.col-fraylon.highlighted {
   }
   .stats-line {
     display: none;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Trust-scale: phone fix
+   The ticker is pixel-pinned (50px row height, 50px step,
+   50px clip window). On phones the long lines wrap, which
+   breaks every one of those locks and produces overlapping
+   orange + grey text. Below 720px we drop the ticker entirely
+   and flow the taglines naturally — no absolutes, no fixed
+   heights, fluid type.
+   ───────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .mw-trust-scale-section { padding: 56px 0; }
+
+  /* Brand wordmark — fluid, no big artificial top offset */
+  .trust-brand-text {
+    font-size: clamp(32px, 9vw, 48px);
+    margin-top: 0;
+    line-height: 1.1;
+  }
+
+  /* Pointer arrow is positioned against the wide desktop layout — hide */
+  .arrow-indicator { display: none; }
+
+  /* Release the pixel locks on the wrapper + viewport */
+  .trust-text-wrapper {
+    height: auto;
+    display: block;
+  }
+  .ticker-viewport {
+    height: auto;
+    overflow: visible;
+    position: static;
+  }
+
+  /* Kill the orange overlay (it's a stacked duplicate that clips
+     to a 50px window — meaningless without aligned 50px rows) */
+  .scanner-window { display: none; }
+
+  /* Stop the step animation; otherwise items shift in/out of view */
+  .grey-layer.ticker-animate,
+  .orange-layer.ticker-animate {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* The list becomes a normal stacked layout */
+  .trust-text-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Items get fluid type, real line-height, no fixed height,
+     and breathing room so wraps never collide */
+  .trust-text-list li {
+    height: auto;              /* ← THE fix: was 50px */
+    min-height: 0;
+    font-size: clamp(18px, 5vw, 26px);
+    line-height: 1.35;
+    padding: 4px 8px;
+    text-align: center;
+    display: block;            /* was flex+center, no longer needed */
+  }
+
+  /* The markup duplicates the list twice for the seamless loop.
+     With the animation off we'd render every line twice — hide the dupes. */
+  .grey-layer li:nth-child(n + 6) { display: none; }
+
+  /* Keep the brand colour pop by gradient-painting the first item
+     (the same gradient the orange overlay used to provide) */
+  .grey-layer li:first-child {
+    background: linear-gradient(90deg, #ef4444 0%, #f97316 40%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 800;
   }
 }
 
