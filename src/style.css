@@ -7738,3 +7738,222 @@ button.mw-chat-bubble {
 .cart-pay-status.error { color: #dc2626; }
 .cart-pay-status.success { color: #059669; }
 .cart-pay-status.info { color: #146EF5; }
+
+/* =========================================================
+   UX feedback round — May 2026
+   1. Mobile drawer: My Account sits too low → lift it up
+   2. Hero tax-note: too small + misaligned vs buttons on desktop
+   3. Stack/parallax cards: same sticky-stack effect on mobile as desktop
+   4. Migration image: hide on mobile (keep desktop)
+   5. Comparison rows: compact so 3+ rows fit in a phone viewport
+   ========================================================= */
+
+/* ── 1. Mobile drawer — lift the "My Account" CTA up ── */
+.mw-mobile-nav {
+    /* Add safe-area bottom inset (iOS notch) + extra breathing room
+       so the CTA never sits flush against the bottom edge or under
+       the chat-bubble FAB. */
+    padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px)) !important;
+}
+.mw-mobile-cta {
+    margin-top: 28px;
+    margin-bottom: 8px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 15px;
+    box-shadow: 0 12px 30px -10px rgba(20, 110, 245, 0.5);
+}
+
+/* ── 2. Hero tax-note — readable + left-aligned with the buttons on desktop ── */
+.mw-hero-tax-note {
+    /* Was 13px, justify-content: center, nowrap. On desktop the column
+       is left-aligned but the note was center-justifying its own flex,
+       which made it visually float right of the Start Now / View Plans
+       buttons. Left-justify by default so it lines up under the CTAs. */
+    font-size: 15px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 6px !important;
+    margin-bottom: 22px !important;
+    line-height: 1.45;
+    color: #475569 !important;
+}
+.mw-hero-tax-note span {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+    /* On the centered mobile hero, re-center the note */
+    .mw-hero-tax-note {
+        justify-content: center !important;
+        text-align: center;
+    }
+}
+@media (max-width: 420px) {
+    .mw-hero-tax-note { font-size: 14px !important; gap: 6px !important; }
+}
+
+/* ── 3. Parallax stack cards on mobile (same UX as desktop) ──
+   Previously mobile turned this into a horizontal swipe carousel.
+   The user wants the sticky-stack scroll effect on mobile too. */
+@media (max-width: 768px) {
+    .cards-stack-container {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+        scroll-snap-type: none !important;
+        gap: 24px !important;
+        padding: 0 !important;
+    }
+    .cards-stack-container::-webkit-scrollbar { display: none; }
+
+    .stack-card {
+        position: sticky !important;
+        /* Account for the sticky header (~64px) + top breathing room */
+        top: 80px !important;
+        flex: 1 0 auto !important;
+        scroll-snap-align: none !important;
+        scroll-margin-left: 0 !important;
+        min-height: 0 !important;
+        margin-bottom: 16px !important;
+        border-radius: 24px !important;
+        box-shadow: 0 18px 38px -22px rgba(15, 23, 42, 0.25) !important;
+    }
+    /* Stagger the sticky tops so cards visibly stack as you scroll
+       (the same trick desktop uses with top: 100/130/160/190px) */
+    .stack-card.card-cloud      { top: 80px !important; z-index: 1; }
+    .stack-card.card-email      { top: 96px !important; z-index: 2; }
+    .stack-card.card-ai-builder { top: 112px !important; z-index: 3; }
+    .stack-card.card-ai-domain  { top: 128px !important; z-index: 4; }
+
+    /* Card internals need to stack vertically on phones */
+    .stack-card .card-content {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        height: auto !important;
+    }
+    .stack-card .card-left,
+    .stack-card .card-right {
+        padding: 28px 22px !important;
+        text-align: left !important;
+    }
+    .stack-card .card-center { display: none !important; }
+    .stack-card .card-left h3 { font-size: 22px !important; line-height: 1.2; }
+    .stack-card .card-left p  { font-size: 14px !important; line-height: 1.55; }
+    .stack-card .card-full-img {
+        width: 100%;
+        height: auto;
+        max-height: 220px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+    .stack-card.card-alt .card-content { flex-direction: column !important; }
+    /* `card-alt` flips left/right on desktop; on mobile we want image-below-text
+       regardless, so don't reverse */
+
+    .stack-card:last-child { margin-bottom: 60px !important; }
+}
+
+/* ── 4. Migration section image — hide on mobile, keep on desktop ── */
+@media (max-width: 900px) {
+    .mw-migration-section .migration-visual {
+        display: none !important;
+    }
+    .mw-migration-section .migration-flex-container {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+    }
+    .mw-migration-section .migration-content {
+        max-width: 100% !important;
+    }
+}
+
+/* ── 5. Comparison rows — compact so 3+ rows fit on a phone screen ──
+   Slimmer padding, smaller min-height on value cells, smaller fonts.
+   Goal: each data row ~80-90px tall (was ~140px). */
+@media (max-width: 720px) {
+    .mw-comparison-section { padding: 40px 0 !important; }
+    .comparison-header { margin-bottom: 18px !important; }
+    .comparison-header h2 { font-size: 22px !important; line-height: 1.2; }
+    .comparison-header p { font-size: 14px !important; margin-top: 6px !important; }
+
+    /* Logo strip — slimmer */
+    .comparison-table thead { margin-bottom: 10px !important; }
+    .comparison-table thead th { padding: 12px 6px !important; min-height: 48px !important; }
+    .comparison-table thead th .table-logo,
+    .comparison-table thead th .table-logo-small {
+        max-height: 20px !important;
+    }
+
+    /* Section dividers (PRICE / FEATURES) — tighter */
+    .comparison-table tbody tr.section-row {
+        padding: 12px 2px 4px !important;
+    }
+    .comparison-table tbody tr.section-row .row-label {
+        font-size: 10px !important;
+    }
+
+    /* Data rows — compact */
+    .comparison-table tbody tr:not(.section-row) {
+        padding: 10px 12px !important;
+        margin-bottom: 6px !important;
+        row-gap: 6px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 6px 14px -14px rgba(15, 23, 42, 0.35) !important;
+    }
+    .comparison-table tbody tr:not(.section-row) .row-label {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        padding: 0 !important;
+    }
+    .comparison-table tbody tr:not(.section-row) > td:not(.row-label) {
+        min-height: 38px !important;
+        padding: 6px 4px !important;
+        font-size: 12px !important;
+    }
+    .comparison-table .price-big {
+        font-size: 13px !important;
+        line-height: 1.15;
+    }
+    .comparison-table .price-renewal {
+        font-size: 12px !important;
+        line-height: 1.15;
+    }
+    .comparison-table .renewal-note,
+    .comparison-table .price-increase {
+        font-size: 9px !important;
+        margin-top: 2px !important;
+        line-height: 1.1 !important;
+    }
+    .comparison-table .val-bold { font-size: 13px !important; }
+    .comparison-table .text-green,
+    .comparison-table .text-grey { font-size: 16px !important; }
+
+    /* Subtle Fraylon underline — smaller */
+    .comparison-table tbody tr:not(.section-row) td.col-fraylon.highlighted::after {
+        height: 1.5px !important;
+    }
+
+    /* Pull the footer button closer */
+    .comparison-table tfoot tr { margin-top: 10px !important; }
+}
+
+@media (max-width: 380px) {
+    /* On very small phones, shrink one more notch */
+    .comparison-table tbody tr:not(.section-row) {
+        padding: 8px 10px !important;
+        row-gap: 5px !important;
+    }
+    .comparison-table tbody tr:not(.section-row) > td:not(.row-label) {
+        min-height: 34px !important;
+        font-size: 11px !important;
+    }
+    .comparison-table tbody tr:not(.section-row) .row-label {
+        font-size: 12px !important;
+    }
+    .comparison-table .price-big,
+    .comparison-table .price-renewal { font-size: 12px !important; }
+}
