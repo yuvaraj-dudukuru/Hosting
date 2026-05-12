@@ -7900,6 +7900,11 @@ button.mw-chat-bubble {
     .comparison-header h2 { font-size: 22px !important; line-height: 1.2; }
     .comparison-header p { font-size: 14px !important; margin-top: 6px !important; }
 
+    /* Hide the "Company origin: India" row on mobile (overlapped with logo strip).
+       It's the first tbody row in the comparison table — the info is already
+       implied by the Fraylon column highlight. */
+    .comparison-table tbody tr:first-child { display: none !important; }
+
     /* Logo strip — slimmer */
     .comparison-table thead { margin-bottom: 10px !important; }
     .comparison-table thead th { padding: 12px 6px !important; min-height: 48px !important; }
