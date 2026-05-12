@@ -6353,19 +6353,9 @@ main {
   .mw-scroll-hint { display: block; }
   .comparison-table-wrapper {
     border-radius: 14px;
-    position: relative;
   }
-  .comparison-table-wrapper::after {
-    content: "";
-    position: sticky;
-    right: 0;
-    top: 0;
-    display: block;
-    height: 1px;
-    width: 1px;
-    pointer-events: none;
-    box-shadow: -28px 0 28px 18px rgba(255,255,255,0.92);
-  }
+  /* (older sticky scroll-edge fade removed — no longer needed since the
+     mobile layout doesn't horizontally scroll) */
 }
 
 /* ---------- "Everything you need..." — mobile carousel controls ---------- */
@@ -7456,21 +7446,33 @@ button.mw-chat-bubble {
   /* ─────── Comparison table — mobile redesign ───────
      Cleaner layout: ONE logo strip on top, value rows below
      with no repeated provider labels. Column alignment makes
-     it obvious which value belongs to which provider.        */
+     it obvious which value belongs to which provider.
 
-  /* Kill horizontal scroll forced by older "min-width" rules */
+     Layout strategy (revised May 2026): use display: flex with
+     flex-wrap on each <tr> so the row-label flexes to full width
+     and the 3 value cells flow as a 3-col strip beneath it. Avoids
+     grid-template-areas which proved finicky alongside older sticky
+     pseudo-elements on the wrapper.                                 */
+
+  /* Kill horizontal scroll forced by older "min-width" rules
+     AND the older sticky scroll-edge fade that was bleeding into
+     the layout. */
   .comparison-table-wrapper {
     overflow-x: visible !important;
+    overflow-y: visible !important;
     width: 100% !important;
     padding: 0 !important;
     border-radius: 0 !important;
+    position: static !important;
   }
-  .comparison-table-wrapper::after { display: none !important; }
+  .comparison-table-wrapper::after,
+  .comparison-table-wrapper::before { display: none !important; content: none !important; }
   .comparison-table {
     min-width: 0 !important;
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    position: static !important;
   }
   .mw-scroll-hint { display: none !important; }
 
@@ -7479,29 +7481,39 @@ button.mw-chat-bubble {
   .comparison-table thead,
   .comparison-table tbody,
   .comparison-table tfoot,
-  .comparison-table tr,
   .comparison-table th,
   .comparison-table td {
     display: block;
     width: auto;
     height: auto;
+    position: static;
   }
 
   /* ── (A) Top logo strip — clean, no inversion ── */
-  .comparison-table thead { margin-bottom: 16px; }
+  .comparison-table thead {
+    display: block !important;
+    margin: 0 0 16px !important;
+    padding: 0 !important;
+    position: relative;
+    z-index: 1;
+  }
   .comparison-table thead tr {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0;
+    display: flex !important;
+    flex-direction: row;
+    align-items: stretch;
     background: #fff;
     border: 1px solid #e8eefc;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 12px 30px -25px rgba(20, 110, 245, 0.4);
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .comparison-table thead th.row-label { display: none !important; }
 
   .comparison-table thead th {
+    flex: 1 1 0;
+    min-width: 0;
     padding: 18px 8px !important;
     text-align: center !important;
     background: #fff !important;
@@ -7546,57 +7558,68 @@ button.mw-chat-bubble {
     filter: none !important;
   }
 
+  /* tbody owns its own stacking context to keep z-order predictable */
+  .comparison-table tbody {
+    display: block !important;
+    position: relative;
+    z-index: 0;
+  }
+
   /* ── (B) Section divider rows ── */
   .comparison-table tbody tr.section-row {
     display: block !important;
     background: transparent;
     border: none;
     box-shadow: none;
-    padding: 18px 2px 6px;
+    padding: 18px 2px 6px !important;
     margin: 0;
   }
   .comparison-table tbody tr.section-row .row-label {
+    display: block !important;
+    width: 100% !important;
     font-size: 11px !important;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 700;
     color: #146EF5;
     padding: 0 !important;
-    width: 100% !important;
     border: none !important;
   }
   .comparison-table tbody tr.section-row td:not(.row-label) { display: none !important; }
 
-  /* ── (C) Data rows: row label on top, three values aligned beneath ── */
+  /* ── (C) Data rows: row label flexes to full width, then a 3-col strip ── */
   .comparison-table tbody tr:not(.section-row) {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      "label label label"
-      "f h g";
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: stretch;
     background: #fff;
     border: 1px solid #e8eefc;
     border-radius: 14px;
-    padding: 14px;
-    margin-bottom: 10px;
+    padding: 14px !important;
+    margin: 0 0 10px !important;
     box-shadow: 0 10px 24px -22px rgba(15, 23, 42, 0.4);
-    column-gap: 0;
-    row-gap: 10px;
+    gap: 10px 0;
+    position: relative;
   }
 
   .comparison-table tbody tr:not(.section-row) .row-label {
-    grid-area: label;
+    /* Force this <td> to take 100% width so the value cells wrap to a new line */
+    flex: 0 0 100% !important;
     width: 100% !important;
+    max-width: 100%;
     font-size: 14px !important;
-    font-weight: 600;
-    color: #0f172a;
+    font-weight: 600 !important;
+    color: #0f172a !important;
     padding: 0 !important;
     border: none !important;
-    text-align: left;
+    text-align: left !important;
+    display: block !important;
   }
 
-  /* Value cells — clean, no per-row provider label */
+  /* Value cells — three equal columns below the label */
   .comparison-table tbody tr:not(.section-row) > td:not(.row-label) {
+    flex: 1 1 0 !important;
+    min-width: 0;
     display: flex !important;
     flex-direction: column;
     align-items: center;
@@ -7615,13 +7638,10 @@ button.mw-chat-bubble {
   }
   /* Rounded corners on the value-strip ends */
   .comparison-table tbody tr:not(.section-row) td.col-fraylon {
-    grid-area: f;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
-  .comparison-table tbody tr:not(.section-row) td.col-other:nth-of-type(3) { grid-area: h; }
-  .comparison-table tbody tr:not(.section-row) td.col-other:nth-of-type(4) {
-    grid-area: g;
+  .comparison-table tbody tr:not(.section-row) td.col-other:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
