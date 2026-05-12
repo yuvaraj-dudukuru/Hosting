@@ -5616,65 +5616,25 @@ main {
 .mw-reveal-d3 { transition-delay: 0.3s; }
 .mw-reveal-d4 { transition-delay: 0.4s; }
 
-/* ── Sticky mobile CTA bar (hidden on desktop) ── */
-.mw-sticky-cta {
-  display: none;
-}
-@media (max-width: 768px) {
-  .mw-sticky-cta {
-    display: flex;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 2000;
-    background: #fff;
-    border-top: 1px solid #e5e7eb;
-    padding: 12px 16px;
-    gap: 12px;
-    align-items: center;
-    box-shadow: 0 -8px 32px rgba(20,110,245,0.10);
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
-  }
-  .mw-sticky-cta.visible { transform: translateY(0); }
-  .mw-sticky-cta-price {
-    flex: 1;
-    line-height: 1.2;
-  }
-  .mw-sticky-cta-price strong {
-    display: block;
-    font-size: 20px;
-    font-weight: 800;
-    color: #111827;
-  }
-  .mw-sticky-cta-price span {
-    font-size: 11px;
-    color: #6b7280;
-  }
-  .mw-sticky-cta a {
-    background: linear-gradient(135deg, #146ef5 0%, #0ea5e9 100%);
-    color: #fff;
-    padding: 13px 24px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-    animation: mw-glow 2.5s infinite;
-  }
-}
+/* Sticky mobile CTA bar — removed */
+.mw-sticky-cta { display: none !important; }
 
 /* ── 768 px — phones & small tablets ── */
 @media (max-width: 768px) {
 
   /* ── Global ── */
-  body { padding-bottom: 76px; } /* room for sticky CTA */
+  body { padding-bottom: 0; }
   .container { padding: 0 16px; }
 
   /* ── Chat bubble — lift above sticky CTA ── */
-  .mw-chat-bubble { bottom: 88px; right: 16px; width: 48px; height: 48px; font-size: 18px; }
+  .mw-chat-bubble { bottom: 22px; right: 16px; width: 48px; height: 48px; font-size: 18px; }
 
   /* ── Header ── */
   .mw-header { padding: 10px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .mw-nav-container { min-height: 56px; align-items: center; }
+  .mw-logo img { display: block; }
+  .mw-header-actions { align-items: center; }
+  .mw-header-actions .btn-outline-account { line-height: 1; }
   .mw-header-actions .btn-outline-account {
     font-size: 12px;
     padding: 7px 12px;
@@ -5827,6 +5787,15 @@ main {
     align-items: center;
     gap: 10px;
     margin-bottom: 16px;
+  }
+  /* Bigger / more tappable primary CTA in hero on mobile */
+  .mw-hero-actions .btn-mw-primary {
+    max-width: 360px;
+    width: 100%;
+    min-height: 52px;
+    font-size: 18px;
+    padding: 18px 44px;
+    border-radius: 16px;
   }
   .btn-mw-primary {
     display: inline-flex;
@@ -6269,9 +6238,114 @@ main {
   display: flex;
   align-items: center;
   gap: 6px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
+  white-space: nowrap;
 }
 .mw-hero-tax-note span { color: #0f172a; font-weight: 600; }
+
+@media (max-width: 420px) {
+  .mw-hero-tax-note { font-size: 12px; gap: 4px; }
+}
+
+/* ---------- Comparison table — standard horizontal scroll (no slider UX) ---------- */
+.comparison-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  padding-bottom: 8px;
+  scrollbar-gutter: stable;
+}
+/* Keep the table readable, encourage natural scroll on phones */
+.comparison-table { min-width: 720px; }
+
+.mw-scroll-hint {
+  display: none;
+  font-size: 12px;
+  color: #64748b;
+  text-align: right;
+  padding: 0 2px 10px;
+}
+@media (max-width: 768px) {
+  .mw-scroll-hint { display: block; }
+  .comparison-table-wrapper {
+    border-radius: 14px;
+    position: relative;
+  }
+  .comparison-table-wrapper::after {
+    content: "";
+    position: sticky;
+    right: 0;
+    top: 0;
+    display: block;
+    height: 1px;
+    width: 1px;
+    pointer-events: none;
+    box-shadow: -28px 0 28px 18px rgba(255,255,255,0.92);
+  }
+}
+
+/* ---------- "Everything you need..." — mobile carousel controls ---------- */
+.mw-stack-controls {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0 18px;
+}
+.mw-stack-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.mw-stack-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.mw-stack-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: transform 0.2s ease, background 0.2s ease, width 0.2s ease;
+}
+.mw-stack-dots .dot.is-active {
+  background: #146ef5;
+  width: 18px;
+}
+
+@media (max-width: 768px) {
+  .mw-stack-controls { display: flex; }
+
+  /* Turn the stack into a swipeable carousel on mobile */
+  .cards-stack-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 2px 2px 14px;
+  }
+  .cards-stack-container::-webkit-scrollbar { height: 6px; }
+  .cards-stack-container::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 999px; }
+
+  .stack-card {
+    flex: 0 0 88%;
+    scroll-snap-align: start;
+    scroll-margin-left: 16px;
+    margin-bottom: 0;
+    top: auto;
+  }
+}
 
 /* ---------- Pricing — per-card GST + show-features button look ---------- */
 .card-gst-note {

@@ -190,15 +190,7 @@ function footer() {
 }
 
 function shellTail() {
-    return `    <!-- Sticky mobile CTA bar -->
-    <div class="mw-sticky-cta" id="stickyCta" aria-hidden="true">
-      <div class="mw-sticky-cta-price">
-        <strong>₹<span id="stickyCtaPrice">69</span><span style="font-size:14px;font-weight:600">/mo</span></strong>
-        <span>Same price at renewal</span>
-      </div>
-      <a href="pricing.html" data-fraylon-action="sticky-cta-get-started">Get Started</a>
-    </div>
-
+    return `
     <button class="mw-chat-bubble" type="button" aria-label="Open support chat" data-open-modal="contactModal" data-fraylon-action="open-chat-bubble">
         <i class="fas fa-comment-dots" aria-hidden="true"></i>
     </button>

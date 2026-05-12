@@ -541,11 +541,9 @@
         const heroV = $('#heroPriceValue');
         const heroDur = $('#heroDurationLabel');
         const heroTotal = $('#heroTotalLabel');
-        const stickyP = $('#stickyCtaPrice');
         if (heroV) heroV.textContent = price.monthly;
-        if (heroDur) heroDur.textContent = `${currentDuration} months`;
+        if (heroDur) heroDur.textContent = `${currentDuration} mo`;
         if (heroTotal) heroTotal.textContent = fmtINR(price.total);
-        if (stickyP) stickyP.textContent = price.monthly;
         // Expose for any consumer
         window.fraylonCheapest = { planId: plan.id, ...price, durationMonths: currentDuration };
     }
@@ -1003,18 +1001,81 @@
     }
 
     // ─────────────────────────────────────────────
-    // 11. Sticky CTA visibility
+    // 11. Mobile carousel for stack cards (Everything you need...)
     // ─────────────────────────────────────────────
 
-    function initStickyCta() {
-        const sticky = $('#stickyCta');
-        const hero = $('.mw-hero');
-        if (!sticky || !hero) return;
-        const onScroll = () => {
-            sticky.classList.toggle('visible', hero.getBoundingClientRect().bottom < 0);
+    function initMobileStackCardsCarousel() {
+        const container = $('.cards-stack-container');
+        const section = $('.mw-parallax-cards-section');
+        if (!container || !section) return;
+
+        const controls = section.querySelector('.mw-stack-controls');
+        const dotsHost = section.querySelector('.mw-stack-dots');
+        const prevBtn = section.querySelector('[data-stack-nav="prev"]');
+        const nextBtn = section.querySelector('[data-stack-nav="next"]');
+        const cards = $$('.stack-card', container);
+        if (!controls || !dotsHost || cards.length < 2) return;
+
+        const mq = window.matchMedia('(max-width: 768px)');
+        let dots = [];
+
+        const cardStep = () => {
+            const first = cards[0]?.getBoundingClientRect();
+            const second = cards[1]?.getBoundingClientRect();
+            if (!first) return 320;
+            if (second) return Math.max(280, Math.round(second.left - first.left));
+            return Math.max(280, Math.round(first.width) + 16);
         };
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const setActive = (idx) => {
+            dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+        };
+
+        const activeIndexFromScroll = () => {
+            const left = container.scrollLeft;
+            const step = cardStep();
+            return Math.max(0, Math.min(cards.length - 1, Math.round(left / step)));
+        };
+
+        const rebuildDots = () => {
+            dotsHost.innerHTML = '';
+            dots = cards.map((_, i) => {
+                const d = document.createElement('span');
+                d.className = 'dot' + (i === 0 ? ' is-active' : '');
+                dotsHost.appendChild(d);
+                return d;
+            });
+        };
+
+        const scrollToIndex = (idx) => {
+            const step = cardStep();
+            container.scrollTo({ left: idx * step, behavior: 'smooth' });
+        };
+
+        const onScroll = () => setActive(activeIndexFromScroll());
+
+        const enable = () => {
+            controls.style.display = '';
+            rebuildDots();
+            container.addEventListener('scroll', onScroll, { passive: true });
+            prevBtn?.addEventListener('click', () => scrollToIndex(Math.max(0, activeIndexFromScroll() - 1)));
+            nextBtn?.addEventListener('click', () => scrollToIndex(Math.min(cards.length - 1, activeIndexFromScroll() + 1)));
+            onScroll();
+        };
+
+        const disable = () => {
+            controls.style.display = 'none';
+            dotsHost.innerHTML = '';
+            container.removeEventListener('scroll', onScroll);
+        };
+
+        const sync = () => {
+            if (mq.matches) enable();
+            else disable();
+        };
+
+        sync();
+        mq.addEventListener?.('change', sync);
     }
 
     // ─────────────────────────────────────────────
@@ -1125,7 +1186,7 @@
         initMobileNav();
         initModals();
         initForms();
-        initStickyCta();
+        initMobileStackCardsCarousel();
         initTestimonialSlider();
     });
 })();
