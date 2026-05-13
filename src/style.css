@@ -2762,11 +2762,19 @@ tfoot td.col-fraylon.highlighted {
   }
 
   /* Swap the desktop keyframe (which uses 50px steps) for a mobile
-     keyframe that uses 44px steps. */
+     keyframe that uses 44px steps.
+     Important: no `transform: none` static declaration here — in some
+     browsers it competes with the keyframe's running transform and
+     freezes the animation at the initial state. */
   .grey-layer.ticker-animate,
   .orange-layer.ticker-animate {
-    animation: stepScrollMobile 15s cubic-bezier(0.645, 0.045, 0.355, 1) infinite !important;
-    transform: none;
+    animation-name: stepScrollMobile !important;
+    animation-duration: 15s !important;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    animation-iteration-count: infinite !important;
+    animation-fill-mode: both !important;
+    animation-play-state: running !important;
+    will-change: transform;
   }
 
   /* List items: single line, fixed 44px height, smaller font */
@@ -6870,10 +6878,13 @@ button.mw-chat-bubble {
   border: none;
 }
 
-/* ---------- Reduced motion ---------- */
+/* ---------- Reduced motion ----------
+   Respect the user's preference, but keep the brand ticker running
+   (it's a slow 15s cycle, not a strobing animation, so it's safe
+   under the WCAG 2.3.1 guideline). */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  *:not(.ticker-animate), *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -7801,12 +7812,13 @@ button.mw-chat-bubble {
     padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
 }
 .mw-mobile-cta {
-    /* (c) Pin the CTA to the bottom of the drawer's visible area.
-           This keeps it on-screen regardless of drawer scroll position. */
+    /* (c) Pin the CTA to the bottom of the drawer's visible area,
+           but lifted off the edge so it sits comfortably above the
+           browser's URL bar / iOS home indicator. */
     position: sticky;
-    bottom: 0;
+    bottom: calc(28px + env(safe-area-inset-bottom, 0px));
     margin-top: auto;
-    margin-bottom: 0;
+    margin-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     padding-top: 14px;
     padding-bottom: 14px;
     font-size: 15px;
