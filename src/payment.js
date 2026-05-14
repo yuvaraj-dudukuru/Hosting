@@ -14,13 +14,13 @@
 const RZP_SCRIPT_URL = 'https://checkout.razorpay.com/v1/checkout.js';
 
 // Default API base — overridable via <meta name="fraylon-api-base" content="https://api.fraylon.com">
+// Same-origin by default: in dev Vite proxies /api → http://localhost:4242 (see vite.config.js);
+// in prod the Node server serves the static site, so same-origin also works.
+// Fallback: if the page is opened directly from disk (file://), point at the dev API.
 function apiBase() {
     const meta = document.querySelector('meta[name="fraylon-api-base"]');
     if (meta?.content) return meta.content.replace(/\/$/, '');
-    // Vite dev → API on 4242. Same-origin in prod.
-    if (location.port === '5173' || location.port === '5174' || location.port === '5175') {
-        return 'http://localhost:4242';
-    }
+    if (location.protocol === 'file:') return 'http://localhost:4242';
     return '';
 }
 
