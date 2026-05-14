@@ -7622,14 +7622,17 @@ button.mw-chat-bubble {
   }
   .comparison-table tbody tr.section-row td:not(.row-label) { display: none !important; }
 
-  /* ── (C) Data rows — minimalist stacked mobile layout ── */
+  /* ── (C) Data rows — label on top, 3 equal provider columns below ── */
   .comparison-table tbody tr:not(.section-row) {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    column-gap: 8px;
+    row-gap: 6px;
     background: transparent !important;
     border: none !important;
     border-bottom: 1px solid #e2e8f0 !important;
     border-radius: 0 !important;
-    padding: 18px 0 !important;
+    padding: 16px 4px !important;
     margin: 0 !important;
     box-shadow: none !important;
     position: relative;
@@ -7639,27 +7642,28 @@ button.mw-chat-bubble {
   }
 
   .comparison-table tbody tr:not(.section-row) .row-label {
+    grid-column: 1 / -1 !important;
     display: block !important;
     width: 100% !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     color: #0f172a !important;
-    padding: 0 16px 10px !important;
+    padding: 0 4px 6px !important;
     border: none !important;
     text-align: left !important;
     line-height: 1.4;
   }
 
-  /* Value cells — stacked provider rows with labels */
+  /* Value cells — 3-up grid, centered per column with provider label above */
   .comparison-table tbody tr:not(.section-row) > td:not(.row-label) {
     flex: none !important;
-    width: 100% !important;
+    width: auto !important;
     display: flex !important;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    padding: 12px 16px !important;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 4px 4px !important;
     font-size: 13px !important;
     color: #475569 !important;
     min-height: auto;
@@ -7667,7 +7671,8 @@ button.mw-chat-bubble {
     background: transparent !important;
     border-radius: 0 !important;
     font-weight: 500;
-    border-top: 1px solid #f1f5f9 !important;
+    border-top: none !important;
+    word-break: break-word;
   }
   .comparison-table tbody tr:not(.section-row) > td:not(.row-label):first-of-type {
     border-top: none !important;
@@ -7675,12 +7680,14 @@ button.mw-chat-bubble {
   .comparison-table tbody tr:not(.section-row) > td:not(.row-label)::before {
     content: "";
     display: block;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #94a3b8;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
   }
   .comparison-table tbody tr:not(.section-row) > td:nth-child(2)::before { content: "Fraylon"; }
   .comparison-table tbody tr:not(.section-row) > td:nth-child(3)::before { content: "Hostinger"; }
